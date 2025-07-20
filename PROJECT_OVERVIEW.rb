@@ -27,22 +27,39 @@ class ProjectOverview
       Main Files:
       • Chiori.rb                     - Main synergy guide and teammate database
       • PROJECT_OVERVIEW.rb           - This overview file
+      • baseConfig.rb                 - Base configuration file for all calculators
+
+      Constellation Scaling Analysis:
+      • ConstellationScaling/C0R1Husk.rb     - C0 Husk of Opulent Dreams build
+      • ConstellationScaling/C0R1Troupe.rb   - C0 Golden Troupe build
+      • ConstellationScaling/C1R1Husk.rb     - C1 Husk of Opulent Dreams build
+      • ConstellationScaling/C1R1Troupe.rb   - C1 Golden Troupe build
+      • ConstellationScaling/C2R1Husk.rb     - C2 Husk of Opulent Dreams build
+      • ConstellationScaling/C2R1Troupe.rb   - C2 Golden Troupe build
+      • ConstellationScaling/C3R1Husk.rb     - C3 Husk of Opulent Dreams build
+      • ConstellationScaling/C3R1Troupe.rb   - C3 Golden Troupe build
+      • ConstellationScaling/C4R1Husk.rb     - C4 Husk of Opulent Dreams build
+      • ConstellationScaling/C4R1Troupe.rb   - C4 Golden Troupe build
+      • ConstellationScaling/C5R1Husk.rb     - C5 Husk of Opulent Dreams build
+      • ConstellationScaling/C5R1Troupe.rb   - C5 Golden Troupe build
+      • ConstellationScaling/C6R1Husk.rb     - C6 Husk of Opulent Dreams build
+      • ConstellationScaling/C6R1Troupe.rb   - C6 Golden Troupe build
 
       C6 Main DPS Builds:
-      • C6DPS/C6Husk.rb               - C6 Main DPS Husk build calculator
-      • C6DPS/C6Troupe.rb             - C6 Main DPS Golden Troupe build calculator
+      • C6DpsTeams/C6Husk.rb               - C6 Main DPS Husk build calculator
+      • C6DpsTeams/C6Troupe.rb             - C6 Main DPS Golden Troupe build calculator
 
-      C0 Sub-DPS Builds:
-      • C0SubDPS/C0SubDps1Husk.rb     - C0 Sub-DPS Team 1 Husk build calculator
-      • C0SubDPS/C0SubDps1Troupe.rb   - C0 Sub-DPS Team 1 Troupe build calculator
-      • C0SubDPS/C0SubDps2Husk.rb     - C0 Sub-DPS Team 2 Husk build calculator
-      • C0SubDPS/C0SubDps2Troupe.rb   - C0 Sub-DPS Team 2 Troupe build calculator
+      C0 Sub-DPS Team Builds:
+      • C0SubDpsTeams/Husk1.rb     - C0 Sub-DPS Team 1 Husk build calculator
+      • C0SubDpsTeams/Troupe1.rb   - C0 Sub-DPS Team 1 Troupe build calculator
+      • C0SubDpsTeams/Husk2.rb     - C0 Sub-DPS Team 2 Husk build calculator
+      • C0SubDpsTeams/Troupe2.rb   - C0 Sub-DPS Team 2 Troupe build calculator
 
-      Duo Geo Team Builds:
-      • DuoGeoAnyTeamUraku/DuoGeoC0SoloHusk.rb     - C0 Duo Geo Uraku Husk build calculator
-      • DuoGeoAnyTeamUraku/DuoGeoC0SoloTroupe.rb   - C0 Duo Geo Uraku Troupe build calculator
-      • DuoGeoAnyTeamFoE/DuoGeoC0SFoESoloHusk.rb   - C0 Duo Geo FoE Husk build calculator
-      • DuoGeoAnyTeamFoE/DuoGeoC0FoESoloTroupe.rb  - C0 Duo Geo FoE Troupe build calculator
+      Any Two Geo Team Builds:
+      • AnyTwoGeoBaseline/Uraku/C0Husk.rb     - C0 Any Two Geo Uraku Husk build calculator
+      • AnyTwoGeoBaseline/Uraku/C0Troupe.rb   - C0 Any Two Geo Uraku Troupe build calculator
+      • AnyTwoGeoBaseline/FoE/C0SFoEHusk.rb   - C0 Any Two Geo FoE Husk build calculator
+      • AnyTwoGeoBaseline/FoE/C0FoETroupe.rb  - C0 Any Two Geo FoE Troupe build calculator
 
       Teammate Damage Contribution:
       • TeammateDmgContribution/AyatoC0R1.rb       - Ayato C0 R1 contribution calculator
@@ -65,14 +82,27 @@ class ProjectOverview
          • Search functionality for characters and roles
          • Interactive methods for finding optimal teams
       
-      2. C6 Main DPS Calculators (C6DPS folder)
+      2. baseConfig.rb - Base Configuration
+         • Standard template for character stats
+         • Core party setup with shared buffs and debuffs
+         • Common target configuration for all calculators
+         • Baseline configuration for comparison purposes
+      
+      3. Constellation Scaling Calculators (ConstellationScaling folder)
+         • Detailed progression analysis from C0 to C6
+         • Direct comparison between constellation levels
+         • Damage calculation for each constellation
+         • Side-by-side comparisons of Husk vs Golden Troupe sets
+         • Properly formatted Ruby data structures for analysis
+      
+      4. C6 Main DPS Calculators (C6DpsTeams folder)
          • Character stats for C6 constellation
          • Comparison between Husk and Golden Troupe sets
          • Premium team optimization with Bennett/Gorou/Xilonen
          • Full DEF scaling with C6 benefits
          • Complete damage analysis for all talent levels
       
-      3. C0 Sub-DPS Calculators (C0SubDPS folder)
+      5. C0 Sub-DPS Calculators (C0SubDpsTeams folder)
          • Two different team compositions (Team 1 and Team 2)
          • Off-field damage optimization
          • Husk vs Troupe comparisons for sub-DPS role
@@ -92,6 +122,13 @@ class ProjectOverview
          • Constellation-specific benefits
          • Weapon and artifact optimization
          • Synergy metrics with Chiori
+
+      6. Any Two Geo Team Calculators (AnyTwoGeoBaseline folder)
+         • Refined and renamed versions of the Duo Geo calculators
+         • Organized by weapon type (Uraku vs FoE subfolders)
+         • Streamlined naming convention for better readability
+         • Enhanced formatting with proper Ruby data structures
+         • Optimized comparison metrics for team variations
 
       CODE STRUCTURE
       ==============
@@ -143,8 +180,8 @@ class ProjectOverview
       c6_teams = guide.get_team_recommendations("C6")
       
       # Compare different builds
-      require_relative 'C0SubDPS/C0SubDps1Husk'
-      require_relative 'C0SubDPS/C0SubDps1Troupe'
+      require_relative 'C0SubDpsTeams/Husk1'
+      require_relative 'C0SubDpsTeams/Troupe1'
       
       husk_calc = ChioriC0SubDPSHuskCalculator.new
       troupe_calc = ChioriC0SubDPSTroupeCalculator.new
@@ -177,11 +214,17 @@ class ProjectOverview
       • C0 Sub-DPS: Strong off-field damage with less field time required
       • C0 Sub-DPS: More flexible team compositions
       
-      Duo Geo Team Variations:
+      Any Two Geo Team Variations:
       • Uraku Misugiri provides +16% Normal Attack and +24% Skill DMG
       • Flute of Ezpitzal provides enhanced DEF scaling
       • Husk builds provide more consistent Geo DMG and DEF scaling
       • Troupe builds excel in swap-heavy rotations with off-field damage
+
+      Constellation Scaling Analysis:
+      • Progressive damage increases from C0 to C6
+      • C2 offers significant DEF conversion for skill damage
+      • C4 provides notable team buff capabilities
+      • C6 dramatically changes playstyle with NA/CA DEF scaling
 
       EXTENDING THE PROJECT
       ====================
@@ -210,7 +253,7 @@ class ProjectOverview
     puts "Verifying Project Structure..."
     
     # Check for required folders
-    required_folders = ["C0SubDPS", "C6DPS", "DuoGeoAnyTeamFoE", "DuoGeoAnyTeamUraku", "TeammateDmgContribution"]
+    required_folders = ["C0SubDpsTeams", "C6DpsTeams", "ConstellationScaling", "AnyTwoGeoBaseline", "TeammateDmgContribution"]
     missing_folders = required_folders.reject { |folder| Dir.exist?(folder) }
     
     if missing_folders.empty?
@@ -220,7 +263,7 @@ class ProjectOverview
     end
     
     # Check for main files
-    main_files = ["Chiori.rb", "PROJECT_OVERVIEW.rb"]
+    main_files = ["Chiori.rb", "PROJECT_OVERVIEW.rb", "baseConfig.rb"]
     missing_files = main_files.reject { |file| File.exist?(file) }
     
     if missing_files.empty?
@@ -246,9 +289,10 @@ class ProjectOverview
       2. Run: ruby Chiori.rb
       3. Explore the interactive guide features
       4. Try the damage calculators in their respective folders:
-         - C6DPS/ for main DPS builds
-         - C0SubDPS/ for sub-DPS team variants
-         - DuoGeoAnyTeamUraku/ and DuoGeoAnyTeamFoE/ for Geo team comps
+         - ConstellationScaling/ for progression analysis from C0 to C6
+         - C6DpsTeams/ for main DPS builds
+         - C0SubDpsTeams/ for sub-DPS team variants
+         - AnyTwoGeoBaseline/ for Geo team compositions
       5. Use the comparison methods to analyze build differences
 
       Need help? All classes have built-in help methods!
@@ -262,20 +306,37 @@ class ProjectOverview
       ChioriMasterGuide/
       ├── Chiori.rb                             # Main synergy guide
       ├── PROJECT_OVERVIEW.rb                   # This overview file
-      ├── C6DPS/                                # C6 Main DPS builds
+      ├── baseConfig.rb                         # Base configuration template
+      ├── ConstellationScaling/                 # Constellation level analysis
+      │   ├── C0R1Husk.rb                       # C0 Husk build calculator
+      │   ├── C0R1Troupe.rb                     # C0 Troupe build calculator
+      │   ├── C1R1Husk.rb                       # C1 Husk build calculator
+      │   ├── C1R1Troupe.rb                     # C1 Troupe build calculator
+      │   ├── C2R1Husk.rb                       # C2 Husk build calculator
+      │   ├── C2R1Troupe.rb                     # C2 Troupe build calculator
+      │   ├── C3R1Husk.rb                       # C3 Husk build calculator
+      │   ├── C3R1Troupe.rb                     # C3 Troupe build calculator
+      │   ├── C4R1Husk.rb                       # C4 Husk build calculator
+      │   ├── C4R1Troupe.rb                     # C4 Troupe build calculator
+      │   ├── C5R1Husk.rb                       # C5 Husk build calculator
+      │   ├── C5R1Troupe.rb                     # C5 Troupe build calculator
+      │   ├── C6R1Husk.rb                       # C6 Husk build calculator
+      │   └── C6R1Troupe.rb                     # C6 Troupe build calculator
+      ├── C6DpsTeams/                           # C6 Main DPS builds
       │   ├── C6Husk.rb                         # C6 Husk build calculator
       │   └── C6Troupe.rb                       # C6 Troupe build calculator
-      ├── C0SubDPS/                             # C0 Sub-DPS builds
-      │   ├── C0SubDps1Husk.rb                  # Team 1 Husk build
-      │   ├── C0SubDps1Troupe.rb                # Team 1 Troupe build
-      │   ├── C0SubDps2Husk.rb                  # Team 2 Husk build
-      │   └── C0SubDps2Troupe.rb                # Team 2 Troupe build
-      ├── DuoGeoAnyTeamUraku/                   # Duo Geo Uraku builds
-      │   ├── DuoGeoC0SoloHusk.rb               # Uraku Husk build
-      │   └── DuoGeoC0SoloTroupe.rb             # Uraku Troupe build
-      ├── DuoGeoAnyTeamFoE/                     # Duo Geo FoE builds
-      │   ├── DuoGeoC0SFoESoloHusk.rb           # FoE Husk build
-      │   └── DuoGeoC0FoESoloTroupe.rb          # FoE Troupe build
+      ├── C0SubDpsTeams/                        # C0 Sub-DPS builds
+      │   ├── Husk1.rb                  # Team 1 Husk build
+      │   ├── Troupe1.rb                # Team 1 Troupe build
+      │   ├── Husk2.rb                  # Team 2 Husk build
+      │   └── Troupe2.rb                # Team 2 Troupe build
+      ├── AnyTwoGeoBaseline/                    # Any Two Geo team builds
+      │   ├── Uraku/                            # Uraku Misugiri builds
+      │   │   ├── C0Husk.rb                     # Uraku Husk build
+      │   │   └── C0Troupe.rb                   # Uraku Troupe build
+      │   └── FoE/                              # Flute of Ezpitzal builds
+      │       ├── C0FoEHusk.rb                  # FoE Husk build
+      │       └── C0FoETroupe.rb                # FoE Troupe build
       └── TeammateDmgContribution/              # Teammate analysis
           ├── AyatoC0R1.rb                      # Ayato contribution
           ├── BennetC5.rb                       # Bennett contribution
