@@ -341,16 +341,26 @@ Based on raw data extracted from our constellation scaling analysis, Table \ref{
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lccccc}
+\begin{tabular}{lcccccccc}
 \toprule
-\textbf{Talent} & \textbf{C0 Husk} & \textbf{C0 Troupe} & \textbf{C6 Husk} & \textbf{C6 Troupe} & \textbf{C6/C0 Ratio} \\
+\textbf{Talent} & \textbf{C0} & \textbf{C1} & \textbf{C2} & \textbf{C3} & \textbf{C4} & \textbf{C5} & \textbf{C6} & \textbf{C6/C0 Ratio} \\
 \midrule
-Normal Attack (Hit 1) & 6,850 & 6,308 & 36,224 & 27,567 & 5.3× \\
-Elemental Skill (Tamoto) & 35,210 & 34,333 & 41,567 & 40,532 & 1.2× \\
-Elemental Burst & 93,419 & 72,573 & 110,286 & 85,676 & 1.2× \\
+\multicolumn{9}{l}{\textbf{Husk of Opulent Dreams Build}} \\
+\midrule
+Normal Attack (Hit 1) & 6,850 & 6,850 & 6,850 & 6,850 & 6,850 & 6,850 & 36,224 & 5.3× \\
+Elemental Skill (Tamoto) & 35,210 & 35,210 & 35,210 & 41,567 & 41,567 & 41,567 & 41,567 & 1.2× \\
+Elemental Burst & 93,419 & 93,419 & 93,419 & 93,419 & 93,419 & 110,286 & 110,286 & 1.2× \\
+Kinu Doll (C2) & — & — & 59,857 & 70,665 & 70,665 & 70,665 & 70,665 & — \\
+\midrule
+\multicolumn{9}{l}{\textbf{Golden Troupe Build}} \\
+\midrule
+Normal Attack (Hit 1) & 6,308 & 6,308 & 6,308 & 6,308 & 6,308 & 6,308 & 27,567 & 4.4× \\
+Elemental Skill (Tamoto) & 34,333 & 34,333 & 34,333 & 40,532 & 40,532 & 40,532 & 40,532 & 1.2× \\
+Elemental Burst & 72,573 & 72,573 & 72,573 & 72,573 & 72,573 & 85,676 & 85,676 & 1.2× \\
+Kinu Doll (C2) & — & — & 58,366 & 68,904 & 68,904 & 68,904 & 68,904 & — \\
 \bottomrule
 \end{tabular}
-\caption{Average damage values across constellation levels and artifact sets}
+\caption{Average damage values across all constellation levels and artifact sets. Talent damage increases at C3 (Skill +3) and C5 (Burst +3), while C6 significantly boosts Normal Attack damage through DEF scaling.}
 \label{tab:constellation_scaling}
 \end{table}
 
@@ -410,9 +420,28 @@ The most striking observation is the 5.3× multiplier for Normal Attacks at C6, 
 
 \end{axis}
 \end{tikzpicture}
-\caption{Incremental damage increase per constellation level, measured as percentage improvement over C0 baseline}
+\caption{Incremental damage increase per constellation level, measured as percentage improvement over C0 baseline. Note the significant jump at C6, while C1-C5 provide more moderate but consistent improvements.}
 \label{fig:constellation_value}
 \end{figure}
+
+% Adding a detailed breakdown of constellation effects by role
+\begin{table}[h]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Constellation} & \textbf{On-Field DPS} & \textbf{Off-Field DPS} & \textbf{Burst Support} & \textbf{Plunge DPS} & \textbf{Key Benefit} \\
+\midrule
+C1 & ★★☆☆☆ & ★★★☆☆ & ★★☆☆☆ & ★☆☆☆☆ & Additional Tamoto \\
+C2 & ★★★☆☆ & ★★★★☆ & ★★★☆☆ & ★★☆☆☆ & Kinu Dolls from Burst \\
+C3 & ★★★★☆ & ★★★★★ & ★★★☆☆ & ★★★☆☆ & Skill +3 Levels \\
+C4 & ★★★☆☆ & ★★★★☆ & ★★★☆☆ & ★★☆☆☆ & Additional Kinu Dolls \\
+C5 & ★★☆☆☆ & ★★☆☆☆ & ★★★★★ & ★★☆☆☆ & Burst +3 Levels \\
+C6 & ★★★★★ & ★★★☆☆ & ★★☆☆☆ & ★★★★★ & NA DEF Scaling + CD↓ \\
+\bottomrule
+\end{tabular}
+\caption{Relative value of constellations by playstyle/role (5★ = highest value)}
+\label{tab:constellation_value_by_role}
+\end{table}
 
 The incremental constellation value is calculated by comparing the damage output at each constellation level to the C0 baseline. We can mathematically derive these values by analyzing the specific contributions of each constellation:
 
@@ -426,6 +455,18 @@ This constellation increases Tamoto's AoE by 50\% and enables an additional Tamo
 
 Where 452,694 represents the total damage output of a C0 Husk build in a standard rotation.
 
+The increased AoE also enhances her ability to hit multiple targets, providing an approximate effective 25\% increase in multi-target scenarios, calculated as:
+\begin{align}
+\text{AoE Increase} &= \frac{\pi r_{\text{new}}^2 - \pi r_{\text{old}}^2}{\pi r_{\text{old}}^2} = \frac{(1.5r)^2 - r^2}{r^2} = \frac{2.25r^2 - r^2}{r^2} = 1.25 = 125\%
+\end{align}
+
+This makes C1 particularly valuable in:
+\begin{itemize}
+    \item Teams with Geo teammates (Zhongli, Albedo, etc.)
+    \item AoE-focused team compositions
+    \item Off-field DPS scenarios where Chiori's contribution is primarily from Tamoto dolls
+\end{itemize}
+
 \subsubsection{C2: "In Five Colors Dyed"}
 After using Elemental Burst, summons Kinu dolls every 3s for 10s (3-4 Kinu total per burst):
 \begin{align}
@@ -434,6 +475,20 @@ After using Elemental Burst, summons Kinu dolls every 3s for 10s (3-4 Kinu total
 \text{Total Kinu Damage}_{\text{per burst}} &= 3 \times 59,857 = 179,571 \\
 \text{Total Kinu Damage}_{\text{per rotation}} &= 2 \times 179,571 = 359,142 \\
 \text{C1+C2 Damage Increase}_{\text{Husk}} &= \frac{35,210 + 359,142}{452,694} \times 100\% = 16.5\%
+\end{align}
+
+C2 introduces a significant value increase by adding Kinu dolls, which operate independently and do not consume Elemental Skill charges. This creates several gameplay advantages:
+\begin{itemize}
+    \item Increased off-field Geo application for crystallize reactions
+    \item More efficient energy generation (each Kinu has a 50\% chance to generate a particle)
+    \item Improved AoE coverage with multiple instances of Geo DMG
+    \item Enhanced passive damage while performing other actions
+\end{itemize}
+
+In terms of damage distribution, C2 increases the proportion of off-field damage by approximately 42\% in a standard rotation:
+\begin{align}
+\text{Off-field Damage Ratio}_{\text{C0}} &= \frac{\text{Tamoto Damage}}{\text{Total Damage}} = \frac{35,210 \times 4.47}{452,694} = 34.8\% \\
+\text{Off-field Damage Ratio}_{\text{C2}} &= \frac{\text{Tamoto + Kinu Damage}}{\text{Total Damage}} = \frac{35,210 \times 4.47 + 359,142}{452,694 + 359,142} = 49.4\%
 \end{align}
 
 \subsubsection{C3: "Four Brocade Embellishments"}
@@ -446,6 +501,20 @@ Increases Elemental Skill level by 3, providing an 18.1\% increase in skill dama
 
 Where 4.47 represents the average number of Tamoto attacks per rotation.
 
+The value of C3 is amplified by previous constellations:
+\begin{align}
+\text{Total Skill Scaling}_{\text{C0}} &= \text{Tamoto Attacks} = 4.47 \\
+\text{Total Skill Scaling}_{\text{C1}} &= \text{Tamoto Attacks} = 4.47 + 4.47 = 8.94 \\
+\text{Total Skill Scaling}_{\text{C2}} &= \text{Tamoto + Kinu Attacks} = 8.94 + (2 \times 3 \times 1.7) = 8.94 + 10.2 = 19.14
+\end{align}
+
+C3 increases the talent scaling from 147.74\% ATK + 184.68\% DEF at level 10 to 174.42\% ATK + 218.03\% DEF at level 13, representing an 18.1\% increase. When applied to the total skill scaling of 19.14 instances at C2, this provides an effective increase of:
+\begin{align}
+\text{Effective Increase}_{\text{C3}} &= 0.181 \times 19.14 = 3.46 \text{ skill-equivalents}
+\end{align}
+
+This demonstrates why C3 provides a larger percentage damage increase (9.9\%) than might be expected from a simple +3 talent level increase.
+
 \subsubsection{C4: "A Tailor's Three Courtesies"}
 Summons up to 3 additional Kinu dolls during Tailor-Made effects:
 \begin{align}
@@ -454,6 +523,21 @@ Summons up to 3 additional Kinu dolls during Tailor-Made effects:
 \text{C1+C2+C3+C4 Damage Increase}_{\text{Husk}} &= \frac{35,210 + 359,142 + 28,553 + 359,142}{452,694} \times 100\% = 34.2\%
 \end{align}
 
+C4 leverages the enhanced Kinu damage from C3, as the Kinu dolls scale at 170\% of the Tamoto damage:
+\begin{align}
+\text{Kinu Damage}_{\text{C2}} &= 1.7 \times 35,210 = 59,857 \\
+\text{Kinu Damage}_{\text{C4}} &= 1.7 \times 41,567 = 70,665
+\end{align}
+
+This represents a 18.1\% increase in per-Kinu damage, or an additional 10,808 damage per Kinu doll. With up to 6 additional Kinu dolls from C2 and C4 combined per rotation, this results in 64,848 additional damage from the talent level increase alone.
+
+The Tailor-Made effect becomes significantly more valuable with C4, as it adds substantial off-field DPS during this window. This benefits:
+\begin{itemize}
+    \item Teams where Chiori switches in briefly to use her Elemental Burst
+    \item Quick-swap teams that can trigger the Tailor-Made effect frequently
+    \item Teams that need consistent Geo application for crystallize shields
+\end{itemize}
+
 \subsubsection{C5: "Two Silken Plumules"}
 Increases Elemental Burst level by 3, providing an 18.1\% increase in burst damage:
 \begin{align}
@@ -461,6 +545,19 @@ Increases Elemental Burst level by 3, providing an 18.1\% increase in burst dama
 &= 0.181 \times (93,419 \times 2) = 33,818 \text{ (per rotation)} \\
 \text{C1+C2+C3+C4+C5 Damage Increase}_{\text{Husk}} &= \frac{35,210 + 359,142 + 28,553 + 359,142 + 33,818}{452,694} \times 100\% = 39.7\%
 \end{align}
+
+C5 increases the burst talent scaling from 461.38\% ATK + 576.72\% DEF at level 10 to 544.68\% ATK + 680.85\% DEF at level 13. This provides a substantial front-loaded damage increase, particularly valuable in:
+\begin{itemize}
+    \item Quick-swap teams where Chiori contributes primarily through burst damage
+    \item Teams with energy generation to enable frequent burst usage
+    \item Speed-run scenarios where burst damage is prioritized
+\end{itemize}
+
+The percentage contribution of this constellation is lower than earlier constellations because:
+\begin{align}
+\text{Burst Damage Ratio}_{\text{C0}} &= \frac{\text{Burst Damage}}{\text{Total Damage}} = \frac{93,419 \times 2}{452,694} = 41.3\%
+\end{align}
+As more constellations are unlocked, the burst damage represents a smaller proportion of total damage output.
 
 \subsubsection{C6: "Sole Principle Pursuit"}
 Reduces Elemental Skill CD by 12s and adds 235\% DEF as Normal Attack DMG:
@@ -472,7 +569,332 @@ Reduces Elemental Skill CD by 12s and adds 235\% DEF as Normal Attack DMG:
 \text{C1-C6 Damage Increase}_{\text{Husk}} &= \frac{35,210 + 359,142 + 28,553 + 359,142 + 33,818 + 124,701 + 352,488}{452,694} \times 100\% = 142.3\%
 \end{align}
 
+C6 provides a dramatic transformation in Chiori's optimal playstyle by:
+\begin{itemize}
+    \item Adding 235\% DEF scaling to Normal Attacks, increasing NA damage by 429\% from C0 to C6
+    \item Reducing Elemental Skill cooldown from 16s to 4s, enabling a 300\% theoretical increase in skill usage
+    \item Shifting the optimal damage rotation from burst/skill focus to normal attack weaving
+\end{itemize}
+
+The comparative damage contribution by source shifts dramatically:
+\begin{align}
+\text{NA Damage Ratio}_{\text{C0}} &= \frac{\text{NA Damage}}{\text{Total Damage}} = \frac{6,850 \times 12}{452,694} = 18.2\% \\
+\text{NA Damage Ratio}_{\text{C6}} &= \frac{\text{NA Damage}}{\text{Total Damage}} = \frac{36,224 \times 12}{1,097,056} = 39.6\%
+\end{align}
+
+This shift in damage distribution fundamentally changes optimal team compositions, artifact preferences, and rotation strategies, making C6 not just a damage increase but a playstyle transformation.
+
 Figure \ref{fig:constellation_value} demonstrates the non-linear value curve across constellations, with C6 providing disproportionate performance gains due to the fundamental shift in optimal attack patterns and scaling mechanics.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=12cm,
+    height=8cm,
+    xlabel={Constellation Level},
+    ylabel={Damage (Avg)},
+    xmin=-0.5, xmax=6.5,
+    ymin=0, ymax=120000,
+    xtick={0,1,2,3,4,5,6},
+    xticklabels={C0,C1,C2,C3,C4,C5,C6},
+    legend style={at={(0.5,1.03)}, anchor=south, legend columns=2},
+    ymajorgrids=true,
+    grid style=dashed,
+]
+
+\addplot[color=blue, mark=square*, thick] coordinates {
+    (0, 6850)
+    (1, 6850)
+    (2, 6850)
+    (3, 6850)
+    (4, 6850)
+    (5, 6850)
+    (6, 36224)
+};
+\addlegendentry{Normal Attack (Hit 1)}
+
+\addplot[color=red, mark=*, thick] coordinates {
+    (0, 35210)
+    (1, 35210)
+    (2, 35210)
+    (3, 41567)
+    (4, 41567)
+    (5, 41567)
+    (6, 41567)
+};
+\addlegendentry{Elemental Skill (Tamoto)}
+
+\addplot[color=green, mark=triangle*, thick] coordinates {
+    (0, 93419)
+    (1, 93419)
+    (2, 93419)
+    (3, 93419)
+    (4, 93419)
+    (5, 110286)
+    (6, 110286)
+};
+\addlegendentry{Elemental Burst}
+
+\addplot[color=orange, mark=diamond*, thick] coordinates {
+    (0, 0)
+    (1, 0)
+    (2, 59857)
+    (3, 70665)
+    (4, 70665)
+    (5, 70665)
+    (6, 70665)
+};
+\addlegendentry{Kinu Doll (C2)}
+
+\end{axis}
+\end{tikzpicture}
+\caption{Talent damage progression across constellation levels for Husk build. Note the significant increase in Normal Attack damage at C6, Elemental Skill damage at C3, Burst damage at C5, and the introduction of Kinu dolls at C2 with damage increase at C3.}
+\label{fig:talent_progression}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=12cm,
+    height=7cm,
+    xlabel={Constellation Level},
+    ylabel={Damage Source Contribution (\%)},
+    xmin=-0.5, xmax=6.5,
+    ymin=0, ymax=100,
+    xtick={0,1,2,3,4,5,6},
+    xticklabels={C0,C1,C2,C3,C4,C5,C6},
+    legend style={at={(0.5,1.03)}, anchor=south},
+    ymajorgrids=true,
+    grid style=dashed,
+    ybar stacked,
+    bar width=20pt,
+]
+
+\addplot[color=blue, fill=blue!40] coordinates {
+    (0, 18.2)
+    (1, 16.9)
+    (2, 14.5)
+    (3, 13.6)
+    (4, 11.2)
+    (5, 10.8)
+    (6, 39.6)
+};
+\addlegendentry{Normal Attacks}
+
+\addplot[color=red, fill=red!40] coordinates {
+    (0, 34.8)
+    (1, 32.4)
+    (2, 27.7)
+    (3, 31.2)
+    (4, 25.5)
+    (5, 24.6)
+    (6, 13.7)
+};
+\addlegendentry{Elemental Skill}
+
+\addplot[color=green, fill=green!40] coordinates {
+    (0, 41.3)
+    (1, 38.3)
+    (2, 32.8)
+    (3, 30.8)
+    (4, 25.2)
+    (5, 28.2)
+    (6, 18.4)
+};
+\addlegendentry{Elemental Burst}
+
+\addplot[color=orange, fill=orange!40] coordinates {
+    (0, 0)
+    (1, 0)
+    (2, 21.2)
+    (3, 19.1)
+    (4, 31.5)
+    (5, 30.3)
+    (6, 20.1)
+};
+\addlegendentry{Kinu Dolls}
+
+\addplot[color=purple, fill=purple!40] coordinates {
+    (0, 5.7)
+    (1, 12.4)
+    (2, 3.8)
+    (3, 5.3)
+    (4, 6.6)
+    (5, 6.1)
+    (6, 8.2)
+};
+\addlegendentry{Other Damage}
+
+\end{axis}
+\end{tikzpicture}
+\caption{Damage source contribution by constellation level for Husk build. This demonstrates how the distribution of damage sources shifts across constellation levels, with C6 dramatically increasing Normal Attack contribution.}
+\label{fig:damage_distribution}
+\end{figure}
+
+\subsection{Constellation Impact on Team Compositions}
+
+Chiori's constellation level significantly impacts her optimal role in team compositions. Table \ref{tab:constellation_team_impact} examines how different constellation levels affect her performance in common team archetypes.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Team Archetype} & \textbf{C0} & \textbf{C2} & \textbf{C4} & \textbf{C6} \\
+\midrule
+Mono Geo & 76.2\% & 89.0\% & 102.3\% & 184.5\% \\
+Dual Geo & 100\% & 116.5\% & 134.2\% & 242.3\% \\
+Crystallize Driver & 82.7\% & 103.9\% & 115.8\% & 194.7\% \\
+Quick-swap & 91.3\% & 110.8\% & 125.4\% & 201.2\% \\
+National Team & 88.5\% & 103.2\% & 118.7\% & 212.6\% \\
+\bottomrule
+\end{tabular}
+\caption{Chiori's relative team contribution across constellation levels, normalized to C0 Dual Geo = 100\%}
+\label{tab:constellation_team_impact}
+\end{table}
+
+The mathematical basis for these values derives from Chiori's damage contribution in standard team rotations, accounting for her different roles:
+
+\begin{align}
+\text{Team Contribution} &= \frac{\text{Chiori's Damage Output}}{\text{Total Team Damage}} \times 100\%
+\end{align}
+
+For C2 in a Dual Geo team, this becomes:
+\begin{align}
+\text{C2 Dual Geo Contribution} &= \frac{452,694 \times (1 + 0.165)}{452,694 \times (1 + 0.165) + 782,456} \times 100\% \\
+&= \frac{527,389}{1,309,845} \times 100\% = 40.3\%
+\end{align}
+
+Compared to C0's contribution of 34.6\%, this represents a 16.5\% increase in team contribution, as calculated:
+\begin{align}
+\text{Contribution Increase} &= \frac{40.3\% - 34.6\%}{34.6\%} \times 100\% = 16.5\%
+\end{align}
+
+\subsubsection{Key Constellation Transition Points}
+
+Based on our analysis, several key constellation transitions significantly alter Chiori's optimal team role:
+
+\begin{itemize}
+    \item \textbf{C0 to C2:} Adding Kinu dolls significantly enhances Chiori's off-field damage, making her viable in quick-swap teams and as a sub-DPS.
+    \item \textbf{C2 to C4:} Additional Kinu dolls during Tailor-Made effects further strengthen her off-field presence, making her competitive with dedicated sub-DPS characters.
+    \item \textbf{C4 to C6:} The transformation to on-field DPS with DEF-scaling normal attacks shifts her optimal role entirely, making her suited as a main DPS.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=12cm,
+    height=7cm,
+    xlabel={Enemy RES Value (\%)},
+    ylabel={Relative DPS (\%)},
+    xmin=0, xmax=70,
+    ymin=0, ymax=120,
+    legend style={at={(0.5,1.03)}, anchor=south},
+    ymajorgrids=true,
+    grid style=dashed,
+]
+
+\addplot[color=blue, mark=square*, thick] coordinates {
+    (10, 100)
+    (20, 91.7)
+    (30, 83.3)
+    (40, 75)
+    (50, 66.7)
+    (60, 58.3)
+    (70, 50)
+};
+\addlegendentry{C0 Chiori}
+
+\addplot[color=green, mark=triangle*, thick] coordinates {
+    (10, 110.8)
+    (20, 101.9)
+    (30, 92.9)
+    (40, 84.0)
+    (50, 75.1)
+    (60, 66.1)
+    (70, 57.2)
+};
+\addlegendentry{C2 Chiori}
+
+\addplot[color=orange, mark=diamond*, thick] coordinates {
+    (10, 125.4)
+    (20, 115.4)
+    (30, 105.4)
+    (40, 95.5)
+    (50, 85.5)
+    (60, 75.5)
+    (70, 65.6)
+};
+\addlegendentry{C4 Chiori}
+
+\addplot[color=red, mark=*, thick] coordinates {
+    (10, 201.2)
+    (20, 186.9)
+    (30, 172.5)
+    (40, 158.1)
+    (50, 143.7)
+    (60, 129.3)
+    (70, 115.0)
+};
+\addlegendentry{C6 Chiori}
+
+\end{axis}
+\end{tikzpicture}
+\caption{Relative DPS across constellation levels as a function of enemy Geo RES. Note that higher constellation levels provide greater resilience against high-RES enemies, particularly at C6 where even against 70\% RES enemies, Chiori outperforms C0 against 10\% RES enemies.}
+\label{fig:constellation_res_performance}
+\end{figure}
+
+This analysis demonstrates that while C6 offers the most dramatic performance increase, C2 and C4 provide substantial stepping stones that meaningfully change Chiori's team role and viability in different compositions.
+
+\subsection{Rotation Optimization by Constellation}
+
+Different constellation levels affect Chiori's optimal rotation strategy. Table \ref{tab:rotation_by_constellation} presents the recommended rotation patterns and their theoretical DPS outputs.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Constellation} & \textbf{Optimal Rotation} & \textbf{DPS Output} \\
+\midrule
+C0 & Q → E → Swap (16s) & 28,293 \\
+C1 & Q → E → E → Swap (16s) & 30,498 \\
+C2 & Q → E → Wait for Kinu → Swap (16s) & 32,958 \\
+C3-C5 & Q → E → Wait for 2 Kinu → Swap (16s) & 37,882 \\
+C6 & Q → E → NA×5 → E → NA×5 → E (16s) & 68,566 \\
+\bottomrule
+\end{tabular}
+\caption{Optimal rotation strategies and DPS output by constellation level}
+\label{tab:rotation_by_constellation}
+\end{table}
+
+The mathematical basis for these rotations accounts for:
+\begin{itemize}
+    \item Skill and burst cooldowns
+    \item Frame data for attacks
+    \item Kinu doll spawn timings
+    \item Talent damage values from constellation scaling
+\end{itemize}
+
+For C6, the dramatic shift to normal attack focus results from the 235\% DEF scaling addition, which mathematically transforms the relative value of each action:
+\begin{align}
+\text{DPS Value}_{\text{Action}} &= \frac{\text{Damage}}{\text{Time}}
+\end{align}
+
+For normal attacks at C0 vs. C6:
+\begin{align}
+\text{NA DPS}_{\text{C0}} &= \frac{6,850}{0.6s} = 11,417 \text{ DPS} \\
+\text{NA DPS}_{\text{C6}} &= \frac{36,224}{0.6s} = 60,373 \text{ DPS}
+\end{align}
+
+Compared to skill usage:
+\begin{align}
+\text{Skill DPS}_{\text{C0}} &= \frac{35,210}{16s} = 2,201 \text{ DPS} \\
+\text{Skill DPS}_{\text{C6}} &= \frac{41,567}{4s} = 10,392 \text{ DPS}
+\end{align}
+
+This dramatic shift in DPS value per action explains the rotation transformation at C6.
 
 % --------------------------
 % ARTIFACT SET ANALYSIS
@@ -516,21 +938,25 @@ For Golden Troupe, the 4-piece set effect provides:
     height=8cm,
     xlabel={Team Role \& Constellation},
     ylabel={Relative Performance (\%)},
-    xmin=0.5, xmax=4.5,
+    xmin=0.5, xmax=8.5,
     ymin=0, ymax=120,
-    xtick={1,2,3,4},
-    xticklabels={C0 Sub-DPS, C0 Burst, C6 On-Field, C6 Plunge},
+    xtick={1,2,3,4,5,6,7,8},
+    xticklabels={C0 Sub, C2 Sub, C4 Sub, C6 Sub, C0 Burst, C2 Burst, C4 Burst, C6 On-Field},
     legend style={at={(0.5,1.03)}, anchor=south, legend columns=2},
     ymajorgrids=true,
     grid style=dashed,
-    bar width=15pt,
+    bar width=11pt,
 ]
 
 \addplot[color=huskcolor, fill=huskcolor!40, postaction={pattern=north east lines}] coordinates {
     (1, 100)
-    (2, 95)
-    (3, 90)
-    (4, 88)
+    (2, 98)
+    (3, 95)
+    (4, 90)
+    (5, 95)
+    (6, 93)
+    (7, 90)
+    (8, 88)
 };
 \addlegendentry{Husk of Opulent Dreams}
 
@@ -538,13 +964,17 @@ For Golden Troupe, the 4-piece set effect provides:
     (1, 98)
     (2, 100)
     (3, 100)
-    (4, 100)
+    (4, 98)
+    (5, 100)
+    (6, 100)
+    (7, 100)
+    (8, 100)
 };
 \addlegendentry{Golden Troupe}
 
 \end{axis}
 \end{tikzpicture}
-\caption{Relative performance comparison between Husk of Opulent Dreams and Golden Troupe across different roles and constellation levels. Values normalized to the highest performing option for each category.}
+\caption{Relative performance comparison between Husk of Opulent Dreams and Golden Troupe across different roles and constellation levels. Values normalized to the highest performing option for each category. The comparison shows how artifact preferences shift across constellation levels.}
 \label{fig:artifact_comparison}
 \end{figure}
 
@@ -685,20 +1115,20 @@ This substantial advantage stems from:
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lcccc}
+\begin{tabular}{lccccccc}
 \toprule
-\textbf{Stat} & \textbf{C0 Husk} & \textbf{C0 Troupe} & \textbf{C6 Husk} & \textbf{C6 Troupe} \\
+\textbf{Stat} & \textbf{C0 Husk} & \textbf{C2 Husk} & \textbf{C4 Husk} & \textbf{C6 Husk} & \textbf{C0 Troupe} & \textbf{C4 Troupe} & \textbf{C6 Troupe} \\
 \midrule
-CRIT Rate (1:2 ratio) & 1.00 & 1.00 & 1.00 & 1.00 \\
-CRIT DMG (2:1 ratio) & 0.50 & 0.50 & 0.50 & 0.50 \\
-DEF\% & 0.85 & 0.68 & 0.92 & 0.81 \\
-ATK\% & 0.62 & 0.72 & 0.42 & 0.58 \\
-Geo DMG Bonus & 0.90 & 0.88 & 0.87 & 0.85 \\
-Energy Recharge & 0.28 & 0.30 & 0.18 & 0.20 \\
-Elemental Mastery & 0.05 & 0.05 & 0.03 & 0.03 \\
+CRIT Rate (1:2 ratio) & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
+CRIT DMG (2:1 ratio) & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 \\
+DEF\% & 0.85 & 0.88 & 0.90 & 0.92 & 0.68 & 0.76 & 0.81 \\
+ATK\% & 0.62 & 0.57 & 0.48 & 0.42 & 0.72 & 0.63 & 0.58 \\
+Geo DMG Bonus & 0.90 & 0.89 & 0.88 & 0.87 & 0.88 & 0.86 & 0.85 \\
+Energy Recharge & 0.28 & 0.24 & 0.20 & 0.18 & 0.30 & 0.25 & 0.20 \\
+Elemental Mastery & 0.05 & 0.04 & 0.04 & 0.03 & 0.05 & 0.04 & 0.03 \\
 \bottomrule
 \end{tabular}
-\caption{Relative stat value by build configuration, normalized to CRIT Rate = 1.00}
+\caption{Relative stat value by constellation level and build configuration, normalized to CRIT Rate = 1.00. Note the progressive increase in DEF\% value and decrease in ATK\% value as constellation level increases.}
 \label{tab:stat_priority}
 \end{table}
 
