@@ -58,8 +58,8 @@ To add a new calculator:
 2. Clone the repository:
 
    ```bash
-   git clone https://github.com/the-red-shield/chiori-master-guide.git
-   cd chiori-master-guide
+   git clone https://github.com/the-red-shield/ChioriMasterGuide.git
+   cd ChioriMasterGuide
    ```
 
 3. Run the main file to ensure everything works:
