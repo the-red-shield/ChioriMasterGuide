@@ -10,6 +10,10 @@
 \usepackage{siunitx}
 \usepackage{pgfplots}
 \usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage[T1]{fontenc}
+\usepackage{pifont}           
+\usepackage{newunicodechar}   
 \usepackage{hyperref}
 \usepackage{geometry}
 \usepackage{titlesec}
@@ -33,6 +37,9 @@
 \definecolor{troupecolor}{RGB}{186, 151, 130}
 \definecolor{c0color}{RGB}{118, 170, 219}
 \definecolor{c6color}{RGB}{179, 118, 219}
+
+\newunicodechar{★}{\ding{72}} % black star
+\newunicodechar{☆}{\ding{73}} % white star
 
 % Configure page style
 \pagestyle{fancy}
@@ -60,13 +67,13 @@
 \begin{titlepage}
     \centering
     \vspace*{1cm}
-    \includegraphics[width=0.7\textwidth]{chiori_banner.png}\\[1cm]
+    \includegraphics[width=0.7\textwidth]{Images/chiori_banner.png}\\[1cm]
     {\Huge \textbf{Comprehensive Analytical Review}\\[0.5cm]}
     {\huge \textcolor{geodark}{Chiori: Pristine Elegance}\\[2cm]}
     {\Large A Quantitative and Qualitative Analysis of\\
     Build Variations, Team Compositions, and Damage Outputs\\[2cm]}
     {\large Prepared by\\
-    The KQM Theorycrafting Team\\[1cm]}
+    the-red-shield \& the KQM Theorycrafting Team\\[1cm]}
     {\large \today}
     \vfill
 \end{titlepage}
@@ -188,6 +195,7 @@ Chiori is a Geo sword user whose kit centers around:
 
 Her constellation progression dramatically shifts her optimal build path, transforming her from an off-field Sub-DPS at C0 to a powerful on-field Main DPS at C6 with 235\% DEF conversion to Normal Attack DMG.
 
+\newpage
 % --------------------------
 % CONSTELLATION ANALYSIS
 % --------------------------
@@ -300,7 +308,7 @@ The performance increase stems from five key factors, each contributing a quanti
         &= 90.6\% \text{ total Geo DMG Bonus}
         \end{align}
     
-    \item \textbf{Additional talent levels (C3 & C5):} Provides an 18-22\% skill and burst damage increase, mathematically derived from the talent scaling:
+    \item \textbf{Additional talent levels (C3 \& C5):} Provides an 18-22\% skill and burst damage increase, mathematically derived from the talent scaling:
         \begin{align}
         \text{E Scaling}_{\text{L10}} &= 147.74\% \text{ ATK} + 184.68\% \text{ DEF} \\
         \text{E Scaling}_{\text{L13}} &= 174.42\% \text{ ATK} + 218.03\% \text{ DEF} \\
@@ -325,7 +333,7 @@ The performance increase stems from five key factors, each contributing a quanti
         
         Accounting for realistic rotation constraints, this translates to a 75\% effective increase in skill usage.
     
-    \item \textbf{Additional Kinu dolls (C2 & C4):} Provides additional scaled instances of Geo DMG:
+    \item \textbf{Additional Kinu dolls (C2 \& C4):} Provides additional scaled instances of Geo DMG:
         \begin{align}
         \text{Kinu Damage} &= 170\% \times \text{Tamoto Damage} \\
         &= 1.7 \times 41,567 = 70,665 \text{ per Kinu (C6 Husk)}
@@ -341,25 +349,29 @@ Based on raw data extracted from our constellation scaling analysis, Table \ref{
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lcccccccc}
-\toprule
-\textbf{Talent} & \textbf{C0} & \textbf{C1} & \textbf{C2} & \textbf{C3} & \textbf{C4} & \textbf{C5} & \textbf{C6} & \textbf{C6/C0 Ratio} \\
-\midrule
-\multicolumn{9}{l}{\textbf{Husk of Opulent Dreams Build}} \\
-\midrule
-Normal Attack (Hit 1) & 6,850 & 6,850 & 6,850 & 6,850 & 6,850 & 6,850 & 36,224 & 5.3× \\
-Elemental Skill (Tamoto) & 35,210 & 35,210 & 35,210 & 41,567 & 41,567 & 41,567 & 41,567 & 1.2× \\
-Elemental Burst & 93,419 & 93,419 & 93,419 & 93,419 & 93,419 & 110,286 & 110,286 & 1.2× \\
-Kinu Doll (C2) & — & — & 59,857 & 70,665 & 70,665 & 70,665 & 70,665 & — \\
-\midrule
-\multicolumn{9}{l}{\textbf{Golden Troupe Build}} \\
-\midrule
-Normal Attack (Hit 1) & 6,308 & 6,308 & 6,308 & 6,308 & 6,308 & 6,308 & 27,567 & 4.4× \\
-Elemental Skill (Tamoto) & 34,333 & 34,333 & 34,333 & 40,532 & 40,532 & 40,532 & 40,532 & 1.2× \\
-Elemental Burst & 72,573 & 72,573 & 72,573 & 72,573 & 72,573 & 85,676 & 85,676 & 1.2× \\
-Kinu Doll (C2) & — & — & 58,366 & 68,904 & 68,904 & 68,904 & 68,904 & — \\
-\bottomrule
-\end{tabular}
+\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}lcccccccc@{}}
+    \toprule
+    \textbf{Talent} & \textbf{C0} & \textbf{C1} & \textbf{C2} & \textbf{C3}
+                    & \textbf{C4} & \textbf{C5} & \textbf{C6} & \textbf{C6/C0 Ratio} \\
+    \midrule
+    \multicolumn{9}{@{}l}{\textbf{Husk of Opulent Dreams Build}}\\
+    \midrule
+    Normal Attack (Hit-1)      & 6,850 & 6,850 & 6,850 & 6,850 & 6,850 & 6,850 & 36,224 & 5.3× \\
+    Elemental Skill (Tamoto)   & 35,210 & 35,210 & 35,210 & 41,567 & 41,567 & 41,567 & 41,567 & 1.2× \\
+    Elemental Burst            & 93,419 & 93,419 & 93,419 & 93,419 & 93,419 & 110,286 & 110,286 & 1.2× \\
+    Kinu Doll (C2)             & —     & —     & 59,857 & 70,665 & 70,665 & 70,665 & 70,665 & — \\
+    \midrule
+    \multicolumn{9}{@{}l}{\textbf{Golden Troupe Build}}\\
+    \midrule
+    Normal Attack (Hit-1)      & 6,308 & 6,308 & 6,308 & 6,308 & 6,308 & 6,308 & 27,567 & 4.4× \\
+    Elemental Skill (Tamoto)   & 34,333 & 34,333 & 34,333 & 40,532 & 40,532 & 40,532 & 40,532 & 1.2× \\
+    Elemental Burst            & 72,573 & 72,573 & 72,573 & 72,573 & 72,573 & 85,676 & 85,676 & 1.2× \\
+    Kinu Doll (C2)             & —     & —     & 58,366 & 68,904 & 68,904 & 68,904 & 68,904 & — \\
+    \bottomrule
+  \end{tabular}%
+}
+
 \caption{Average damage values across all constellation levels and artifact sets. Talent damage increases at C3 (Skill +3) and C5 (Burst +3), while C6 significantly boosts Normal Attack damage through DEF scaling.}
 \label{tab:constellation_scaling}
 \end{table}
@@ -427,21 +439,25 @@ The most striking observation is the 5.3× multiplier for Normal Attacks at C6, 
 % Adding a detailed breakdown of constellation effects by role
 \begin{table}[h]
 \centering
-\begin{tabular}{lccccc}
-\toprule
-\textbf{Constellation} & \textbf{On-Field DPS} & \textbf{Off-Field DPS} & \textbf{Burst Support} & \textbf{Plunge DPS} & \textbf{Key Benefit} \\
-\midrule
-C1 & ★★☆☆☆ & ★★★☆☆ & ★★☆☆☆ & ★☆☆☆☆ & Additional Tamoto \\
-C2 & ★★★☆☆ & ★★★★☆ & ★★★☆☆ & ★★☆☆☆ & Kinu Dolls from Burst \\
-C3 & ★★★★☆ & ★★★★★ & ★★★☆☆ & ★★★☆☆ & Skill +3 Levels \\
-C4 & ★★★☆☆ & ★★★★☆ & ★★★☆☆ & ★★☆☆☆ & Additional Kinu Dolls \\
-C5 & ★★☆☆☆ & ★★☆☆☆ & ★★★★★ & ★★☆☆☆ & Burst +3 Levels \\
-C6 & ★★★★★ & ★★★☆☆ & ★★☆☆☆ & ★★★★★ & NA DEF Scaling + CD↓ \\
-\bottomrule
-\end{tabular}
+\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}lccccc@{}}
+    \toprule
+    \textbf{Constellation} & \textbf{On‑Field DPS} & \textbf{Off‑Field DPS} &
+    \textbf{Burst Support} & \textbf{Plunge DPS} & \textbf{Key Benefit} \\
+    \midrule
+    C1 & ★★☆☆☆ & ★★★☆☆ & ★★☆☆☆ & ★☆☆☆☆ & Additional Tamoto \\
+    C2 & ★★★☆☆ & ★★★★☆ & ★★★☆☆ & ★★☆☆☆ & Kinu Dolls from Burst \\
+    C3 & ★★★★☆ & ★★★★★ & ★★★☆☆ & ★★★☆☆ & Skill +3 Levels \\
+    C4 & ★★★☆☆ & ★★★★☆ & ★★★☆☆ & ★★☆☆☆ & Additional Kinu Dolls \\
+    C5 & ★★☆☆☆ & ★★☆☆☆ & ★★★★★ & ★★☆☆☆ & Burst +3 Levels \\
+    C6 & ★★★★★ & ★★★☆☆ & ★★☆☆☆ & ★★★★★ & NA DEF-Scaling + CD↓ \\
+    \bottomrule
+  \end{tabular}%
+}
 \caption{Relative value of constellations by playstyle/role (5★ = highest value)}
 \label{tab:constellation_value_by_role}
 \end{table}
+
 
 The incremental constellation value is calculated by comparing the damage output at each constellation level to the C0 baseline. We can mathematically derive these values by analyzing the specific contributions of each constellation:
 
@@ -543,8 +559,15 @@ Increases Elemental Burst level by 3, providing an 18.1\% increase in burst dama
 \begin{align}
 \text{Burst Damage Increase} &= 0.181 \times \text{Burst Damage} \\
 &= 0.181 \times (93,419 \times 2) = 33,818 \text{ (per rotation)} \\
-\text{C1+C2+C3+C4+C5 Damage Increase}_{\text{Husk}} &= \frac{35,210 + 359,142 + 28,553 + 359,142 + 33,818}{452,694} \times 100\% = 39.7\%
 \end{align}
+\[
+\resizebox{.9\textwidth}{!}{$
+  \text{C1+C2+C3+C4+C5 Damage Increase}_{\text{Husk}}
+  =\frac{35,210+359,142+28,553+359,142+33,818}{452,694}\times100\%
+  =39.7\%
+$}
+\]
+
 
 C5 increases the burst talent scaling from 461.38\% ATK + 576.72\% DEF at level 10 to 544.68\% ATK + 680.85\% DEF at level 13. This provides a substantial front-loaded damage increase, particularly valuable in:
 \begin{itemize}
@@ -566,8 +589,16 @@ Reduces Elemental Skill CD by 12s and adds 235\% DEF as Normal Attack DMG:
 &= 3 \times 41,567 = 124,701 \\
 \text{NA DEF Scaling Benefit} &= \text{NA Sequences} \times \text{DEF Bonus} \\
 &= 12 \times (36,224 - 6,850) = 12 \times 29,374 = 352,488 \\
-\text{C1-C6 Damage Increase}_{\text{Husk}} &= \frac{35,210 + 359,142 + 28,553 + 359,142 + 33,818 + 124,701 + 352,488}{452,694} \times 100\% = 142.3\%
 \end{align}
+\[
+\resizebox{.9\textwidth}{!}{$
+\text{C1--C6 Damage Increase}_{\text{Husk}}
+= \frac{35\,210 + 359\,142 + 28\,553 + 359\,142 + 33\,818 + 124\,701 + 352\,488}
+       {452\,694}\times 100\%
+= 142.3\%
+$}
+\]
+
 
 C6 provides a dramatic transformation in Chiori's optimal playstyle by:
 \begin{itemize}
@@ -932,49 +963,47 @@ For Golden Troupe, the 4-piece set effect provides:
 
 \begin{figure}[H]
 \centering
+\resizebox{\textwidth}{!}{%  ← scales everything proportionally
 \begin{tikzpicture}
+%--- house‑style colours (tweak to taste) -------------------------------
+\pgfplotsset{
+  huskbar/.style   ={draw=none, fill=geodark!70!white,  fill opacity=.85},
+  troupebar/.style ={draw=none, fill=geoyellow!60!black, fill opacity=.85},
+}
+
 \begin{axis}[
-    width=12cm,
-    height=8cm,
-    xlabel={Team Role \& Constellation},
-    ylabel={Relative Performance (\%)},
-    xmin=0.5, xmax=8.5,
-    ymin=0, ymax=120,
-    xtick={1,2,3,4,5,6,7,8},
-    xticklabels={C0 Sub, C2 Sub, C4 Sub, C6 Sub, C0 Burst, C2 Burst, C4 Burst, C6 On-Field},
-    legend style={at={(0.5,1.03)}, anchor=south, legend columns=2},
-    ymajorgrids=true,
-    grid style=dashed,
-    bar width=11pt,
+  ybar,
+  width=\linewidth,                 
+  height=0.45\textheight,           
+  bar width=16pt,                   
+  ymin=0, ymax=120,
+  ylabel={Relative Performance (\%)},
+  xlabel={Team Role \& Constellation},
+  symbolic x coords={C0 Sub,C2 Sub,C4 Sub,C6 Sub,C0 Burst,C2 Burst,C4 Burst,C6 On‑Field},
+  xtick=data,                       % one tick per label
+  xticklabel style={rotate=25, anchor=east}, % slight tilt = more room
+  enlarge x limits=0.04,            % small side margin
+  ymajorgrids=true,
+  grid style={dashed,gray!30},
+  legend style={
+    at={(0.5,1.02)}, anchor=south,  % centred above the plot
+    legend columns=2,
+    font=\small
+  }
 ]
 
-\addplot[color=huskcolor, fill=huskcolor!40, postaction={pattern=north east lines}] coordinates {
-    (1, 100)
-    (2, 98)
-    (3, 95)
-    (4, 90)
-    (5, 95)
-    (6, 93)
-    (7, 90)
-    (8, 88)
-};
-\addlegendentry{Husk of Opulent Dreams}
+\addplot[huskbar] coordinates {
+  (C0 Sub,100)  (C2 Sub,98)  (C4 Sub,95)  (C6 Sub,90)
+  (C0 Burst,95) (C2 Burst,93) (C4 Burst,90) (C6 On‑Field,88)};
+\addlegendentry{Husk (4-pc)}
 
-\addplot[color=troupecolor, fill=troupecolor!40, postaction={pattern=north west lines}] coordinates {
-    (1, 98)
-    (2, 100)
-    (3, 100)
-    (4, 98)
-    (5, 100)
-    (6, 100)
-    (7, 100)
-    (8, 100)
-};
-\addlegendentry{Golden Troupe}
-
+\addplot[troupebar] coordinates {
+  (C0 Sub,98)  (C2 Sub,100) (C4 Sub,100) (C6 Sub,98)
+  (C0 Burst,100) (C2 Burst,100) (C4 Burst,100) (C6 On‑Field,100)};
+\addlegendentry{Golden Troupe (4-pc)}
 \end{axis}
-\end{tikzpicture}
-\caption{Relative performance comparison between Husk of Opulent Dreams and Golden Troupe across different roles and constellation levels. Values normalized to the highest performing option for each category. The comparison shows how artifact preferences shift across constellation levels.}
+\end{tikzpicture}}
+\caption{Relative performance comparison between Husk of Opulent Dreams and Golden Troupe across roles and constellation levels. Values are normalised to the best choice in each category.}
 \label{fig:artifact_comparison}
 \end{figure}
 
@@ -1042,9 +1071,15 @@ The factors contributing to this difference include:
 
 \begin{enumerate}
     \item \textbf{DEF and Geo DMG bonuses from Husk:} These provide significant benefits to both skill and burst damage:
-    \begin{align}
-    \text{Skill DMG Increase from DEF}_{\text{Husk}} &= \frac{1,889 - 1,658}{1,658} \times 184.68\% \times 100\% = 2.45 \times 0.1223 \times 184.68\% \times 100\% = 5.5\%
-    \end{align}
+\[
+\resizebox{.9\textwidth}{!}{$
+\begin{aligned}
+\text{Skill DMG Increase from DEF}_{\text{Husk}}
+  &= \frac{1{,}889-1{,}658}{1{,}658}\times 184.68\%\times 100\%  \\
+  &= 2.45 \times 0.1223 \times 184.68\% \times 100\% = 5.5\%
+\end{aligned}
+$}
+\]
     
     \begin{align}
     \text{DMG Bonus Increase}_{\text{Husk}} &= \frac{1.706 - 1.466}{1.466} \times 100\% = 16.4\%
@@ -1115,23 +1150,25 @@ This substantial advantage stems from:
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lccccccc}
+\resizebox{.9\textwidth}{!}{%
+\begin{tabular}{@{}lccccccc@{}}
 \toprule
-\textbf{Stat} & \textbf{C0 Husk} & \textbf{C2 Husk} & \textbf{C4 Husk} & \textbf{C6 Husk} & \textbf{C0 Troupe} & \textbf{C4 Troupe} & \textbf{C6 Troupe} \\
+\textbf{Stat} & \textbf{C0 Husk} & \textbf{C2 Husk} & \textbf{C4 Husk} & \textbf{C6 Husk} &
+              \textbf{C0 Troupe} & \textbf{C4 Troupe} & \textbf{C6 Troupe} \\
 \midrule
-CRIT Rate (1:2 ratio) & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
-CRIT DMG (2:1 ratio) & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 \\
-DEF\% & 0.85 & 0.88 & 0.90 & 0.92 & 0.68 & 0.76 & 0.81 \\
-ATK\% & 0.62 & 0.57 & 0.48 & 0.42 & 0.72 & 0.63 & 0.58 \\
-Geo DMG Bonus & 0.90 & 0.89 & 0.88 & 0.87 & 0.88 & 0.86 & 0.85 \\
-Energy Recharge & 0.28 & 0.24 & 0.20 & 0.18 & 0.30 & 0.25 & 0.20 \\
-Elemental Mastery & 0.05 & 0.04 & 0.04 & 0.03 & 0.05 & 0.04 & 0.03 \\
+CRIT Rate (1:2)          & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
+CRIT DMG  (2:1)          & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 \\
+DEF\%                    & 0.85 & 0.88 & 0.90 & 0.92 & 0.68 & 0.76 & 0.81 \\
+ATK\%                    & 0.62 & 0.57 & 0.48 & 0.42 & 0.72 & 0.63 & 0.58 \\
+Geo DMG Bonus            & 0.90 & 0.89 & 0.88 & 0.87 & 0.88 & 0.86 & 0.85 \\
+Energy Recharge          & 0.28 & 0.24 & 0.20 & 0.18 & 0.30 & 0.25 & 0.20 \\
+Elemental Mastery        & 0.05 & 0.04 & 0.04 & 0.03 & 0.05 & 0.04 & 0.03 \\
 \bottomrule
-\end{tabular}
-\caption{Relative stat value by constellation level and build configuration, normalized to CRIT Rate = 1.00. Note the progressive increase in DEF\% value and decrease in ATK\% value as constellation level increases.}
+\end{tabular}%
+}
+\caption{Relative stat values by constellation level and build configuration, normalised to CRIT-Rate = 1.00. Note the rise in DEF\% value and drop in ATK\% value as constellation level increases.}
 \label{tab:stat_priority}
 \end{table}
-
 \subsection{Mathematical Derivation of Stat Priorities}
 
 The values in Table \ref{tab:stat_priority} are derived through a comparative analysis of the impact of each stat on Chiori's total damage output. Using 1 substat roll as our unit of measurement:
@@ -1243,43 +1280,47 @@ For Flute of Ezpitzal at R5:
 
 \begin{figure}[H]
 \centering
+\resizebox{\textwidth}{!}{%  ← scales the whole figure to page width
 \begin{tikzpicture}
-\begin{axis}[
-    width=12cm,
-    height=8cm,
-    xlabel={Artifact Set \& Combat Scenario},
-    ylabel={Damage Output (Normalized)},
-    xmin=0.5, xmax=4.5,
-    ymin=0, ymax=1.1,
-    xtick={1,2,3,4},
-    xticklabels={Husk Quick-swap, Troupe Quick-swap, Husk Sustained, Troupe Sustained},
-    legend style={at={(0.5,1.03)}, anchor=south, legend columns=2},
-    ymajorgrids=true,
-    grid style=dashed,
-]
+%--- house colours ------------------------------------------------------
+\pgfplotsset{
+  uraku/.style ={draw=none, fill=geodark!70!white,  fill opacity=.85},
+  flute/.style ={draw=none, fill=geoyellow!60!black, fill opacity=.85},
+}
 
-% Data normalized against highest performance scenario
-\addplot[color=geodark, fill=geodark!40, postaction={pattern=north east lines}] coordinates {
-    (1, 0.92)
-    (2, 0.95)
-    (3, 1.00)
-    (4, 0.97)
-};
+\begin{axis}[
+  ybar,
+  width=\linewidth,
+  height=0.45\textheight,
+  bar width=20pt,
+  ymin=0,  ymax=1.1,
+  ylabel={Damage Output (normalised)},
+  symbolic x coords={Husk QS,Troupe QS,Husk Sustained,Troupe Sustained},
+  xtick=data,
+  xticklabel style={rotate=20, anchor=east}, % slight tilt for room
+  enlarge x limits=0.05,                     % small side margin
+  ymajorgrids=true,
+  grid style={dashed,gray!30},
+  legend style={
+    at={(0.5,1.02)}, anchor=south,
+    legend columns=2,
+    font=\small
+  }
+]
+%--- data ---------------------------------------------------------------
+\addplot[uraku] coordinates {
+  (Husk QS,0.92) (Troupe QS,0.95) (Husk Sustained,1.00) (Troupe Sustained,0.97)};
 \addlegendentry{Uraku Misugiri R1}
 
-\addplot[color=geoyellow, fill=geoyellow!40, postaction={pattern=north west lines}] coordinates {
-    (1, 0.85)
-    (2, 0.89)
-    (3, 0.94)
-    (4, 0.91)
-};
+\addplot[flute] coordinates {
+  (Husk QS,0.85) (Troupe QS,0.89) (Husk Sustained,0.94) (Troupe Sustained,0.91)};
 \addlegendentry{Flute of Ezpitzal R5}
-
 \end{axis}
-\end{tikzpicture}
-\caption{Normalized damage output comparison between Uraku Misugiri (R1) and Flute of Ezpitzal (R5) across different artifact sets and combat scenarios. Values normalized to highest performing configuration.}
+\end{tikzpicture}}
+\caption{Normalised damage output for Uraku Misugiri (R1) and Flute of Ezpitzal (R5) in quick‑swap (QS) and sustained rotations with the two main artifact sets.}
 \label{fig:weapon_comparison}
 \end{figure}
+
 
 \subsection{Mathematical Derivation of Weapon Performance Differentials}
 
@@ -1521,52 +1562,49 @@ Our analysis of team compositions reveals distinct synergy patterns and teammate
 
 \begin{figure}[H]
 \centering
+\resizebox{\textwidth}{!}{%  full‑width, auto‑scaled
 \begin{tikzpicture}
+% colour shortcuts ------------------------------------------------------
+\pgfplotsset{
+  c0bar/.style ={draw=none, fill=c0color!70!white,  fill opacity=.85},
+  c6bar/.style ={draw=none, fill=c6color!60!black, fill opacity=.85},
+}
+
 \begin{axis}[
-    width=12cm,
-    height=8cm,
-    xlabel={Support Character},
-    ylabel={Team DPS Contribution (\%)},
-    xmin=0.5, xmax=8.5,
-    ymin=0, ymax=45,
-    xtick={1,2,3,4,5,6,7,8},
-    xticklabels={Zhongli, Albedo, Gorou C6, Furina, Bennett, Yelan, Xilonen, Xianyun},
-    legend style={at={(0.5,1.03)}, anchor=south, legend columns=2},
-    ymajorgrids=true,
-    grid style=dashed,
-    bar width=7pt,
-    ybar,
+  ybar,
+  width=\linewidth,
+  height=0.45\textheight,
+  bar width=18pt,
+  ymin=0, ymax=45,
+  ylabel={Team DPS Contribution (\%)},
+  symbolic x coords={Zhongli,Albedo,Gorou~C6,Furina,Bennett,Yelan,Xilonen,Xianyun},
+  xtick=data,
+  xticklabel style={rotate=20, anchor=east}, % tilt for space
+  enlarge x limits=0.05,
+  ymajorgrids=true,
+  grid style={dashed,gray!30},
+  legend style={
+    at={(0.5,1.02)}, anchor=south,
+    legend columns=2,
+    font=\small
+  }
 ]
+% data ------------------------------------------------------------------
+\addplot[c0bar] coordinates {
+  (Zhongli,20.5)  (Albedo,18.3)  (Gorou~C6,22.6) (Furina,28.3)
+  (Bennett,31.2)  (Yelan,12.4)   (Xilonen,36.8)  (Xianyun,8.6)};
+\addlegendentry{C0 Sub‑DPS}
 
-\addplot[color=c0color, fill=c0color!40] coordinates {
-    (1, 20.5)
-    (2, 18.3)
-    (3, 22.6)
-    (4, 28.3)
-    (5, 31.2)
-    (6, 12.4)
-    (7, 36.8)
-    (8, 8.6)
-};
-\addlegendentry{C0 Sub-DPS}
-
-\addplot[color=c6color, fill=c6color!40] coordinates {
-    (1, 18.2)
-    (2, 14.8)
-    (3, 36.7)
-    (4, 34.2)
-    (5, 29.6)
-    (6, 8.9)
-    (7, 32.5)
-    (8, 24.8)
-};
+\addplot[c6bar] coordinates {
+  (Zhongli,18.2)  (Albedo,14.8)  (Gorou~C6,36.7) (Furina,34.2)
+  (Bennett,29.6)  (Yelan,8.9)    (Xilonen,32.5)  (Xianyun,24.8)};
 \addlegendentry{C6 Main DPS}
-
 \end{axis}
-\end{tikzpicture}
-\caption{Relative team DPS contribution from key support characters, measured as percentage increase to overall team damage output.}
+\end{tikzpicture}}
+\caption{Relative team DPS contribution (percentage increase to total team damage) provided by key support characters for C0 Sub‑DPS and C6 Main‑DPS Chiori builds.}
 \label{fig:teammate_value}
 \end{figure}
+
 
 \subsection{Mathematical Derivation of Teammate Value}
 
@@ -1619,7 +1657,7 @@ The combined effect is multiplicative:
 &= 1.538 - 1 = 0.538 = 53.8\%
 \end{align}
 
-However, this assumes full uptime of all effects. Accounting for realistic uptime (shield uptime ≈ 85\%, construct presence ≈ 90\%), and diminishing returns when combined with other team buffs, the practical contribution reduces to 20.5\% for C0 teams. In C6 teams, the relative value decreases slightly to 18.2\% as other sources of damage amplification gain importance.
+However, this assumes full uptime of all effects. Accounting for realistic uptime (shield uptime about 85\%, construct presence about 90\%), and diminishing returns when combined with other team buffs, the practical contribution reduces to 20.5\% for C0 teams. In C6 teams, the relative value decreases slightly to 18.2\% as other sources of damage amplification gain importance.
 
 \subsubsection{Gorou C6 (22.6\% for C0, 36.7\% for C6)}
 
@@ -1641,7 +1679,7 @@ Gorou's contribution includes:
     \text{Skill Damage Increase} &= \frac{4,654 - 3,489}{3,489} \times 100\% = 33.4\%
     \end{align}
     
-    Weighted by the DEF component's contribution to total damage (≈ 60\% for skill, ≈ 70\% for burst):
+    Weighted by the DEF component's contribution to total damage (about 60\% for skill, about 70\% for burst):
     \begin{align}
     \text{Total Damage Increase}_{\text{DEF buff}} &= 33.4\% \times (0.60 \times 0.40 + 0.70 \times 0.25) \\
     &= 33.4\% \times (0.24 + 0.175) \\
@@ -1669,7 +1707,7 @@ The combined effect is multiplicative:
 &= 1.373 - 1 = 0.373 = 37.3\%
 \end{align}
 
-With realistic buff uptime (≈ 85\%) and overlap with other sources, this becomes 22.6\% for C0 Chiori teams. For C6 Chiori, where DEF scaling on Normal Attacks becomes predominant, the effect increases to 36.7\%.
+With realistic buff uptime (about 85\%) and overlap with other sources, this becomes 22.6\% for C0 Chiori teams. For C6 Chiori, where DEF scaling on Normal Attacks becomes predominant, the effect increases to 36.7\%.
 
 \subsubsection{Xilonen (36.8\% for C0, 32.5\% for C6)}
 
@@ -1703,7 +1741,7 @@ The combined effect:
 &= 1.539 - 1 = 0.539 = 53.9\%
 \end{align}
 
-With realistic buff uptime (≈ 85\%) and rotation constraints, this becomes 36.8\% for C0 Chiori teams. For C6 Chiori, the effect is slightly reduced to 32.5\% as Geo-specific buffs become relatively more valuable.
+With realistic buff uptime (about 85\%) and rotation constraints, this becomes 36.8\% for C0 Chiori teams. For C6 Chiori, the effect is slightly reduced to 32.5\% as Geo-specific buffs become relatively more valuable.
 
 From our team composition analysis, several key patterns emerge:
 
