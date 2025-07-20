@@ -148,7 +148,6 @@ class XilonenC2R1DamageCalculator
       }
     }
   end
-  end
 
   # ========================================
   # WEAPONS SETUP
@@ -233,7 +232,6 @@ class XilonenC2R1DamageCalculator
         physical: 10.0
       }
     }
-  end
   end
 
   # ========================================
@@ -479,7 +477,6 @@ class XilonenC2R1DamageCalculator
       bennett_burst: "12s duration with 15s cooldown (~80% uptime)"
     }
   end
-end
 
 # ========================================
 # USAGE EXAMPLE

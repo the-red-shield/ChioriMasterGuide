@@ -43,7 +43,6 @@ def character_stats
         elemental_mastery: 50
       }
     }
-  }
 end
 
 # ========================================

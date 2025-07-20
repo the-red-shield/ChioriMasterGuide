@@ -61,7 +61,6 @@ class XilonenC0R1DamageCalculator
       }
     }
   end
-  end
 
   # ========================================
   # DEBUFFS SETUP
@@ -124,7 +123,6 @@ class XilonenC0R1DamageCalculator
         }
       }
     }
-  end
   end
 
   # ========================================
@@ -192,7 +190,6 @@ class XilonenC0R1DamageCalculator
         physical: 10.0
       }
     }
-  end
   end
 
   # ========================================
