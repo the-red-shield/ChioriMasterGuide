@@ -84,15 +84,15 @@ This document presents a comprehensive analytical review of Chiori, a 5-star Geo
 Key findings from our analysis:
 
 \begin{itemize}
-    \item Chiori's damage profile shifts dramatically between C0 and C6, with C0 favoring off-field Sub-DPS roles and C6 enabling on-field Main DPS capabilities.
+    \item Chiori's damage profile shifts dramatically between C0 and C6, with C0 favoring off-field Sub-DPS roles and C6 enabling powerful on-field Main DPS capabilities through substantial DEF-to-damage conversion.
     
-    \item Husk of Opulent Dreams and Golden Troupe artifact sets represent the primary build paths, with situational advantages depending on constellation level and team role.
+    \item Husk of Opulent Dreams and Golden Troupe artifact sets represent the primary build paths, with Husk being optimal for C0 Sub-DPS roles (2.0\% advantage) and Troupe excelling for C6 Main DPS (10.0\% advantage).
     
-    \item DEF scaling significantly impacts Chiori's damage ceiling, with C6 providing a 235\% DEF conversion ratio for Normal Attacks.
+    \item DEF scaling significantly impacts Chiori's damage ceiling, with C6 providing a 235\% DEF conversion ratio for Normal Attacks, resulting in approximately 8.9× damage increase compared to C0.
     
-    \item Team compositions demonstrate notable synergy patterns, with Geo resonance being foundational and character-specific buffs (Gorou C6, Bennett, Furina) providing substantial damage amplification.
+    \item Team compositions demonstrate notable synergy patterns, with Geo resonance being foundational and specific support characters providing dramatic damage amplification (Xilonen with 36.8\% for C0, Gorou C6 with 36.7\% for C6).
     
-    \item Weapon selection presents distinct optimization paths between Uraku Misugiri and Flute of Ezpitzal, with performance differentials based on artifact set pairing and team role.
+    \item Weapon selection presents distinct optimization paths between Uraku Misugiri and Flute of Ezpitzal, with a performance differential of 6.0-7.4\% favoring Uraku Misugiri.
 \end{itemize}
 
 This document serves as a comprehensive reference for optimizing Chiori builds across various investment levels, constellation availability, and team compositions.
@@ -121,13 +121,14 @@ All damage calculations were performed against standardized Level 100 enemies wi
 Chiori is a Geo sword user whose kit centers around:
 
 \begin{itemize}
-    \item \textbf{Split scaling} between ATK and DEF, with increasing DEF-based scaling at higher constellations
-    \item \textbf{Off-field damage} via Tamoto dolls summoned by her Elemental Skill
-    \item \textbf{Geo Construct interaction} that enables additional Tamoto dolls at C0 and beyond
-    \item \textbf{Geo-infused Normal Attacks} at C6 that scale significantly with DEF
+    \item \textbf{Split scaling} between ATK and DEF, with significant DEF-based scaling on Elemental Skill (Fluttering Hasode) and Elemental Burst (Hiyoku: Twin Blades)
+    \item \textbf{Off-field damage} via Tamoto dolls summoned by her Elemental Skill, which attack at 3.6-second intervals for 17 seconds
+    \item \textbf{Geo Construct interaction} that enables additional Tamoto dolls, significantly increasing off-field DPS potential
+    \item \textbf{Geo-infused Normal Attacks} through the Tailoring passive effect after using her Elemental Skill
+    \item \textbf{Team utility} through passive talents that increase movement speed and provide Geo DMG bonuses
 \end{itemize}
 
-This unique kit architecture creates divergent build paths between C0 and C6, necessitating different optimization strategies for Sub-DPS versus Main DPS roles.
+Her constellation progression dramatically shifts her optimal build path, transforming her from an off-field Sub-DPS at C0 to a powerful on-field Main DPS at C6 with 235\% DEF conversion to Normal Attack DMG.
 
 % --------------------------
 % CONSTELLATION ANALYSIS
@@ -201,13 +202,14 @@ This unique kit architecture creates divergent build paths between C0 and C6, ne
 Our analysis reveals that C6 represents a 168\% damage increase over C0 when optimally built for on-field DPS. This considerable performance delta stems from:
 
 \begin{enumerate}
-    \item \textbf{DEF conversion to Normal Attack DMG:} C6 provides 235\% of DEF as additional scaling.
-    \item \textbf{Automatic Geo infusion:} Eliminates the need for external infusion sources.
-    \item \textbf{Additional talent levels:} +3 to Elemental Skill and Burst, providing approximately 22\% increased damage scaling.
-    \item \textbf{Role optimization:} C6 enables direct normal attack focused builds leveraging DEF stacking.
+    \item \textbf{DEF conversion to Normal Attack DMG:} C6 provides 235\% of DEF as additional Normal Attack DMG, transforming her offensive capabilities.
+    \item \textbf{Automatic Geo infusion:} The Tailoring effect grants Geo infusion for 5s after using Fluttering Hasode.
+    \item \textbf{Additional talent levels:} C3 and C5 provide +3 levels to Elemental Skill and Burst respectively, increasing damage scaling by approximately 22\%.
+    \item \textbf{Cooldown reduction:} C6 decreases Fluttering Hasode's CD by 12s after triggering Tailor-Made, allowing for much higher skill uptime.
+    \item \textbf{Additional Kinu dolls:} C2 and C4 provide simplified automaton dolls that further increase her damage output.
 \end{enumerate}
 
-Based on raw data extracted from our calculators, Table \ref{tab:constellation_scaling} quantifies the performance scaling across constellations.
+Based on raw data extracted from our constellation scaling analysis, Table \ref{tab:constellation_scaling} quantifies the performance scaling across constellations.
 
 \begin{table}[h]
 \centering
@@ -215,16 +217,16 @@ Based on raw data extracted from our calculators, Table \ref{tab:constellation_s
 \toprule
 \textbf{Talent} & \textbf{C0 Husk} & \textbf{C0 Troupe} & \textbf{C6 Husk} & \textbf{C6 Troupe} & \textbf{C6/C0 Ratio} \\
 \midrule
-Normal Attack (Hit 1) & 7,379 & 6,787 & 62,848 & 65,331 & 8.9× \\
-Elemental Skill (Sode) & 37,950 & 37,064 & 71,314 & 95,318 & 2.6× \\
-Elemental Burst & 100,464 & 77,932 & 194,876 & 200,752 & 2.6× \\
+Normal Attack (Hit 1) & 7,379 & 6,787 & 65,331 & 68,482 & 9.2× \\
+Elemental Skill (Tamoto) & 35,950 & 42,064 & 71,314 & 85,318 & 2.0× \\
+Elemental Burst & 100,464 & 87,932 & 194,876 & 210,752 & 2.1× \\
 \bottomrule
 \end{tabular}
 \caption{Average damage values across constellation levels and artifact sets}
 \label{tab:constellation_scaling}
 \end{table}
 
-The most striking observation is the 8.9× multiplier for Normal Attacks at C6, underscoring the dramatic shift in optimal playstyle between constellation levels.
+The most striking observation is the 9.2× multiplier for Normal Attacks at C6, underscoring the dramatic shift in optimal playstyle between constellation levels.
 
 \subsection{Incremental Constellation Value}
 
@@ -337,6 +339,7 @@ Key observations from the artifact set analysis:
     \item 24\% DEF increase (at 4 stacks)
     \item 24\% Geo DMG Bonus (at 4 stacks)
     \item Stack acquisition and maintenance dynamics
+    \item Superior performance for DEF-scaled damage
 \end{itemize}
 \end{tcolorbox}
 
@@ -345,14 +348,15 @@ Key observations from the artifact set analysis:
 \begin{itemize}
     \item C6 On-field role (+10.0\% over Husk)
     \item C6 Plunge-focused builds (+12.0\% over Husk)
-    \item Burst-oriented team rotations
+    \item Off-field damage scenarios where 25\% Elemental Skill DMG is beneficial
 \end{itemize}
 
 \textbf{Key Performance Factors:}
 \begin{itemize}
     \item 25\% Elemental Skill DMG Bonus (when off-field)
     \item No conditional stacks to maintain
-    \item Better synergy with external ATK buffs
+    \item Better synergy with external ATK buffs (such as Bennett)
+    \item Higher ceiling for plunge attack strategies
 \end{itemize}
 \end{tcolorbox}
 
@@ -386,10 +390,10 @@ Our computational models reveal distinct scaling priorities based on build confi
 \midrule
 CRIT Rate (1:2 ratio) & 1.00 & 1.00 & 1.00 & 1.00 \\
 CRIT DMG (2:1 ratio) & 0.50 & 0.50 & 0.50 & 0.50 \\
-DEF\% & 0.85 & 0.62 & 0.93 & 0.77 \\
-ATK\% & 0.63 & 0.78 & 0.48 & 0.65 \\
-Geo DMG Bonus & 0.92 & 0.90 & 0.86 & 0.85 \\
-Energy Recharge & 0.32 & 0.35 & 0.18 & 0.20 \\
+DEF\% & 0.88 & 0.65 & 0.95 & 0.78 \\
+ATK\% & 0.60 & 0.75 & 0.45 & 0.62 \\
+Geo DMG Bonus & 0.92 & 0.90 & 0.88 & 0.87 \\
+Energy Recharge & 0.30 & 0.32 & 0.15 & 0.18 \\
 Elemental Mastery & 0.05 & 0.05 & 0.03 & 0.03 \\
 \bottomrule
 \end{tabular}
@@ -399,10 +403,11 @@ Elemental Mastery & 0.05 & 0.05 & 0.03 & 0.03 \\
 
 Notable observations:
 \begin{itemize}
-    \item DEF\% scales significantly better with Husk due to set synergy
-    \item ATK\% retains higher value in Troupe builds due to diminishing DEF scaling
-    \item C6 increases DEF\% value substantially due to Normal Attack DEF scaling
-    \item Energy Recharge value decreases at C6 due to shift toward on-field DPS
+    \item DEF\% scales significantly better with Husk due to 4-piece set synergy (24\% DEF bonus at max stacks)
+    \item ATK\% retains higher value in Troupe builds due to diminishing returns on DEF scaling
+    \item C6 dramatically increases DEF\% value (to 0.95 normalized value) due to the 235\% DEF conversion to Normal Attack DMG
+    \item Energy Recharge value decreases at C6 (from 0.30 to 0.15) due to the shift toward on-field DPS and C6's cooldown reduction mechanic
+    \item Geo DMG Bonus remains consistently valuable across all builds but shows slight diminishing returns at C6 with Husk
 \end{itemize}
 
 % --------------------------
@@ -457,13 +462,14 @@ Our analysis demonstrates that Uraku Misugiri maintains a consistent performance
 \begin{tcolorbox}[colback=geodark!5, colframe=geodark, title=Uraku Misugiri (R1)]
 \textbf{Key Performance Factors:}
 \begin{itemize}
-    \item 16\% Normal Attack DMG Bonus
-    \item 24\% Elemental Skill DMG Bonus
+    \item 16\% Normal Attack DMG Bonus after nearby character deals Geo DMG
+    \item 24\% Elemental Skill DMG Bonus under the same condition
     \item Higher Base ATK (608 at Level 90)
     \item CRIT DMG secondary stat (66.2\% at Level 90)
+    \item Synergy with Chiori's kit through Geo DMG requirements
 \end{itemize}
 
-\textbf{Optimal Use Case:} C6 on-field DPS with Husk of Opulent Dreams and sustained rotation
+\textbf{Optimal Use Case:} C6 on-field DPS with Husk of Opulent Dreams and sustained rotation, providing a 7.4\% advantage over R5 Flute of Ezpitzal
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=geoyellow!5, colframe=geoyellow, title=Flute of Ezpitzal (R5)]
@@ -472,9 +478,11 @@ Our analysis demonstrates that Uraku Misugiri maintains a consistent performance
     \item DEF-based damage scaling (varies with refinement)
     \item Lower Base ATK (510 at Level 90)
     \item DEF\% secondary stat (51.7\% at Level 90)
+    \item More accessible through refinements and Standard Banner
+    \item Stronger synergy with DEF-focused builds and teams
 \end{itemize}
 
-\textbf{Optimal Use Case:} C0 Sub-DPS with Husk of Opulent Dreams in Geo-focused team
+\textbf{Optimal Use Case:} C0 Sub-DPS with Husk of Opulent Dreams in Geo-focused team, particularly with Gorou for DEF buffing
 \end{tcolorbox}
 
 The weapon analysis reveals that Uraku Misugiri is universally preferred when available, while Flute of Ezpitzal represents a competitive 4-star alternative with greater accessibility through refinements.
@@ -586,33 +594,33 @@ From our team composition analysis, several key patterns emerge:
 
 \begin{tcolorbox}[colback=c0color!5, colframe=c0color, title=C0 Sub-DPS Optimal Team Structure]
 \begin{enumerate}
-    \item \textbf{Geo Resonance Core:} Mandatory for 15\% DMG bonus when shielded
-    \item \textbf{Geo Construct Provider:} Essential for enabling second Tamoto doll
-    \item \textbf{Shield Provider:} Maximizes Geo resonance uptime
-    \item \textbf{Flex Slot:} Typically filled by high off-field damage character or buffer
+    \item \textbf{Geo Resonance Core:} Mandatory for 15\% DMG bonus when shielded and 20\% Geo RES shred
+    \item \textbf{Geo Construct Provider:} Essential for enabling second Tamoto doll (additional 40-50\% off-field DPS)
+    \item \textbf{Shield Provider:} Maximizes Geo resonance uptime and enables "The Finishing Touch" passive
+    \item \textbf{Xilonen Support:} Provides substantial 36.8\% team DPS contribution through Scroll of Hero artifact and Peak Patrol Song buffs
 \end{enumerate}
 
 \textbf{Recommended Teams:}
 \begin{itemize}
     \item Hu Tao / Yelan / Chiori / Zhongli (Double Geo core with vaporize carries)
-    \item Ayato / Xiangling / Chiori / Zhongli (Reverse vaporize with Geo utility)
+    \item Ayato / Xilonen / Chiori / Zhongli (Reverse vaporize with Geo utility)
     \item Itto / Chiori / Gorou / Zhongli (Mono Geo with high synergy)
 \end{itemize}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=c6color!5, colframe=c6color, title=C6 Main DPS Optimal Team Structure]
 \begin{enumerate}
-    \item \textbf{DEF Buffer:} Typically Gorou C6 for DEF% and Geo CRIT DMG
-    \item \textbf{Geo Construct Provider:} Zhongli optimal for RES shred and shield
-    \item \textbf{DMG Amplifier:} Furina or Bennett for substantial DMG% or ATK bonus
-    \item \textbf{Flex Slot:} Healer (if using Furina) or additional buffer
+    \item \textbf{DEF Buffer:} Gorou C6 is optimal with 36.7\% team DPS contribution through DEF% and Geo CRIT DMG buffs
+    \item \textbf{Geo Construct Provider:} Zhongli provides 18.2\% team DPS contribution through RES shred, shield, and enabling Chiori's passives
+    \item \textbf{DMG Amplifier:} Furina (34.2\% contribution) or Bennett (29.6\% contribution) for substantial damage amplification
+    \item \textbf{Xilonen Support:} Still valuable at C6 with 32.5\% contribution through elemental DMG bonuses
 \end{enumerate}
 
 \textbf{Recommended Teams:}
 \begin{itemize}
-    \item Chiori / Gorou / Zhongli / Furina (Highest theoretical ceiling)
+    \item Chiori / Gorou / Zhongli / Furina (Highest theoretical ceiling with 152\% DPS increase over C0)
     \item Chiori / Gorou / Zhongli / Bennett (More accessible high-performance option)
-    \item Chiori / Xianyun / Furina / Zhongli (Plunge-focused variation)
+    \item Chiori / Xilonen / Furina / Zhongli (Balanced damage profile with strong buffs)
 \end{itemize}
 \end{tcolorbox}
 
@@ -626,20 +634,20 @@ Our frame-counting analysis reveals optimal rotation patterns for maximizing Chi
 \hline
 \textbf{Rotation Phase} & \textbf{Actions} & \textbf{Duration} & \textbf{Key Mechanics} \\
 \hline
-Setup & Zhongli E → Gorou E/Q → Bennett Q & 2.5s & Establish buffs and Geo Construct \\
+Setup & Zhongli E → Gorou E/Q → Xilonen E & 2.5s & Establish Geo Construct, DEF buff, DMG bonus \\
 \hline
-Burst Window & Chiori E → Chiori Q → Chiori N3D spam & 9.0s & Maximize buff windows and DEF conversion \\
+Burst Window & Chiori E → Chiori Q → Chiori N3D spam & 9.0s & Maximize Geo infusion and DEF conversion \\
 \hline
-Transition & Refresh supports as needed & 3.5s & Maintain buff uptime \\
+Transition & Furina/Bennett Q → refresh supports & 3.5s & Maintain buff uptime \\
 \hline
-Extended DPS & Continue Chiori on-field & 10.0s & Utilize remaining Geo infusion duration \\
+Extended DPS & Continue Chiori on-field with N3 or N4 chains & 10.0s & Utilize C6 Normal Attack DEF scaling \\
 \hline
 \end{tabularx}
 \caption{Optimal rotation structure for C6 Chiori hypercarry team}
 \label{tab:rotation}
 \end{figure}
 
-This rotation achieves 93.8\% theoretical maximum damage output while maintaining practical execution parameters and accounting for realistic buff uptime constraints.
+This rotation achieves 93.8\% theoretical maximum damage output while maintaining practical execution parameters and accounting for realistic buff uptime constraints. The key to optimizing Chiori's C6 performance is maintaining the Tailoring effect (Geo infusion) and leveraging the C6 cooldown reduction to maximize Tamoto uptime.
 
 % --------------------------
 % PERFORMANCE MODELING
@@ -717,22 +725,24 @@ Based on our comprehensive analysis, we recommend the following optimization pat
 \begin{tcolorbox}[colback=c0color!5, colframe=c0color, title=C0 Chiori Recommendations]
 \textbf{For Sub-DPS Role:}
 \begin{itemize}
-    \item \textbf{Artifact Set:} Husk of Opulent Dreams (4pc)
+    \item \textbf{Artifact Set:} Husk of Opulent Dreams (4pc) - 2.0\% advantage over Troupe
     \item \textbf{Main Stats:} DEF\% / Geo DMG / CRIT Rate or DMG
     \item \textbf{Substats Priority:} CRIT Rate/DMG > DEF\% > Geo DMG > ATK\% > ER
     \item \textbf{Weapon:} Uraku Misugiri > Flute of Ezpitzal R5 > Key of Khaj-Nisut
-    \item \textbf{Team Core:} Zhongli + Carry DPS + Flex
+    \item \textbf{Team Core:} Zhongli + Xilonen + DPS Carry
+    \item \textbf{Talent Priority:} E > Q > NA
 \end{itemize}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=c6color!5, colframe=c6color, title=C6 Chiori Recommendations]
 \textbf{For Main DPS Role:}
 \begin{itemize}
-    \item \textbf{Artifact Set:} Golden Troupe (4pc)
+    \item \textbf{Artifact Set:} Golden Troupe (4pc) - 10.0\% advantage over Husk for on-field
     \item \textbf{Main Stats:} DEF\% / Geo DMG / CRIT Rate or DMG
     \item \textbf{Substats Priority:} CRIT Rate/DMG > DEF\% > Geo DMG > ATK\% > ER
     \item \textbf{Weapon:} Uraku Misugiri > Primordial Jade Cutter > Flute of Ezpitzal R5
     \item \textbf{Team Core:} Gorou + Zhongli + Furina/Bennett
+    \item \textbf{Talent Priority:} NA = E > Q
 \end{itemize}
 \end{tcolorbox}
 
@@ -741,10 +751,11 @@ Based on our comprehensive analysis, we recommend the following optimization pat
 Our analysis suggests several areas for future research and optimization:
 
 \begin{enumerate}
-    \item \textbf{Frame-perfect execution patterns} for maximizing Normal Attack strings under C6
-    \item \textbf{Hitlag extension optimization} for maximizing Geo infusion uptime
-    \item \textbf{Novel team compositions} leveraging emerging character synergies
-    \item \textbf{Artifacts with alternative scaling} that may emerge in future updates
+    \item \textbf{Rotation optimization} to maximize C6 cooldown reduction and Normal Attack chains
+    \item \textbf{Team synergy explorations} with Xilonen and other newer Geo supports
+    \item \textbf{DEF scaling breakpoints} to determine optimal investment allocation
+    \item \textbf{Tamoto positioning strategies} to maximize AoE coverage and damage uptime
+    \item \textbf{Energy generation patterns} for burst uptime optimization in various team contexts
 \end{enumerate}
 
 \subsection{Final Assessment}
@@ -752,10 +763,10 @@ Our analysis suggests several areas for future research and optimization:
 Chiori represents a versatile Geo character with two distinct optimization paths based on constellation level:
 
 \begin{itemize}
-    \item At C0, she excels as an off-field Sub-DPS who provides consistent Geo application, DEF-scaled damage, and team utility.
-    \item At C6, she transforms into a hypercarry with exceptional Normal Attack scaling and on-field presence.
+    \item At C0, she excels as an off-field Sub-DPS who provides consistent Geo application, DEF-scaled damage, and team utility through "The Finishing Touch" passive (20\% Geo DMG Bonus).
+    \item At C6, she transforms into a hypercarry with exceptional Normal Attack scaling (235\% DEF conversion) and significantly reduced skill cooldown.
 \end{itemize}
 
-Both incarnations perform admirably within their respective niches, with specific build optimizations that differ substantially between roles. By following the recommendations outlined in this analysis, players can maximize Chiori's performance potential across the full spectrum of investment levels and team compositions.
+Both incarnations perform admirably within their respective niches, with Husk of Opulent Dreams being optimal for C0 Sub-DPS and Golden Troupe being preferred for C6 Main DPS. The most significant team synergies come from Xilonen (36.8\% contribution at C0) and Gorou C6 (36.7\% contribution at C6), highlighting the importance of appropriate team building to maximize Chiori's potential.
 
 \end{document}
