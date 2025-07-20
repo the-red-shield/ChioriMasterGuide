@@ -1251,8 +1251,8 @@ Plunge Attack Focus & N/A & Troupe \\
 Our analysis compares two primary weapon options for Chiori:
 
 \begin{enumerate}
-    \item \textbf{Uraku Misugiri (5★):} Provides CRIT DMG (66.2\%) with a passive that increases Normal Attack DMG (16\% R1) and Elemental Skill DMG (24\% R1) after a nearby party member deals Geo DMG.
-    \item \textbf{Flute of Ezpitzal (4★):} Provides DEF\% (51.7\%) with a passive that increases all DMG based on DEF (varied by refinement level).
+    \item \textbf{Uraku Misugiri (5★):} Provides CRIT DMG (88.2\%) with a passive that increases Normal Attack DMG (16\% R1) and Elemental Skill DMG (24\% R1) after a nearby party member deals Geo DMG.
+    \item \textbf{Flute of Ezpitzal (4★):} Provides DEF\% (68.97\%) with a passive that increases all DMG based on DEF (varied by refinement level).
 \end{enumerate}
 
 The mathematical basis for our weapon evaluation follows the standard damage formula with weapon-specific variables:
@@ -1263,15 +1263,15 @@ The mathematical basis for our weapon evaluation follows the standard damage for
 
 For Uraku Misugiri at R1:
 \begin{align}
-\text{Base ATK} &= 608 \\
-\text{CRIT DMG} &= 66.2\% \\
+\text{Base ATK} &= 542 \\
+\text{CRIT DMG} &= 88.2\% \\
 \text{NA DMG Bonus} &= 16\% \\
 \text{Skill DMG Bonus} &= 24\%
 \end{align}
 
 For Flute of Ezpitzal at R5:
 \begin{align}
-\text{Base ATK} &= 510 \\
+\text{Base ATK} &= 455 \\
 \text{DEF\%} &= 51.7\% \\
 \text{All DMG Bonus} &= 0.29\% \times \text{DEF}
 \end{align}
@@ -1326,80 +1326,80 @@ For Flute of Ezpitzal at R5:
 
 Let's mathematically derive the performance differentials between these weapons across different scenarios:
 
-\subsubsection{Husk Sustained Scenario (7.1\% advantage for Uraku)}
+\subsubsection{Husk Sustained Scenario (14.6\% advantage for Uraku)}
 
 In the Husk Sustained scenario with C6 Chiori, we calculate:
 
 \begin{align}
 \text{Total ATK}_{\text{Uraku}} &= \text{Base ATK}_{\text{Character}} + \text{Base ATK}_{\text{Weapon}} \times (1 + \text{ATK\%}) \\
-&= 337.76 + 608 \times (1 + 0.46) = 337.76 + 887.68 = 1,225.44 \\
-\text{Total ATK}_{\text{Flute}} &= 337.76 + 510 \times (1 + 0.46) = 337.76 + 744.60 = 1,082.36 \\
-\text{ATK Differential} &= \frac{1,225.44 - 1,082.36}{1,082.36} \times 100\% = 13.2\%
+&= 337.76 + 542 \times (1 + 0.46) = 337.76 + 791.32 = 1,129.08 \\
+\text{Total ATK}_{\text{Flute}} &= 337.76 + 455 \times (1 + 0.46) = 337.76 + 664.30 = 1,002.06 \\
+\text{ATK Differential} &= \frac{1,129.08 - 1,002.06}{1,002.06} \times 100\% = 12.7\%
 \end{align}
 
 \begin{align}
 \text{Total DEF}_{\text{Uraku}} &= \text{Base DEF} \times (1 + \text{DEF\%}_{\text{artifacts}} + \text{DEF\%}_{\text{Husk}}) \\
 &= 771 \times (1 + 0.83 + 0.30) = 771 \times 2.13 = 1,642.23 \\
-\text{Total DEF}_{\text{Flute}} &= 771 \times (1 + 0.83 + 0.30 + 0.517) = 771 \times 2.647 = 2,040.94 \\
-\text{DEF Differential} &= \frac{2,040.94 - 1,642.23}{1,642.23} \times 100\% = 24.3\%
+\text{Total DEF}_{\text{Flute}} &= 771 \times (1 + 0.83 + 0.30 + 0.6897) = 771 \times 2.8197 = 2,173.99 \\
+\text{DEF Differential} &= \frac{2,173.99 - 1,642.23}{1,642.23} \times 100\% = 32.4\%
 \end{align}
 
 \begin{align}
-\text{CRIT DMG}_{\text{Uraku}} &= 50\% + 62.2\% + 66.2\% = 178.4\% \\
+\text{CRIT DMG}_{\text{Uraku}} &= 50\% + 62.2\% + 88.2\% = 200.4\% \\
 \text{CRIT DMG}_{\text{Flute}} &= 50\% + 62.2\% = 112.2\% \\
-\text{CRIT Multiplier}_{\text{Uraku}} &= 1 + 0.70 \times 1.784 = 2.249 \\
+\text{CRIT Multiplier}_{\text{Uraku}} &= 1 + 0.70 \times 2.004 = 2.403 \\
 \text{CRIT Multiplier}_{\text{Flute}} &= 1 + 0.70 \times 1.122 = 1.785 \\
-\text{CRIT Multiplier Differential} &= \frac{2.249 - 1.785}{1.785} \times 100\% = 26.0\%
+\text{CRIT Multiplier Differential} &= \frac{2.403 - 1.785}{1.785} \times 100\% = 34.6\%
 \end{align}
 
 For Normal Attack damage calculation (first hit, C6):
 \begin{align}
-\text{NA Base Damage}_{\text{Uraku}} &= 0.9767 \times 1,225.44 + 2.35 \times 1,642.23 \\
-&= 1,196.89 + 3,859.24 = 5,056.13 \\
-\text{NA Base Damage}_{\text{Flute}} &= 0.9767 \times 1,082.36 + 2.35 \times 2,040.94 \\
-&= 1,057.16 + 4,796.21 = 5,853.37 \\
-\text{NA Base Damage Ratio} &= \frac{5,853.37}{5,056.13} = 1.158
+\text{NA Base Damage}_{\text{Uraku}} &= 0.9767 \times 1,129.08 + 2.35 \times 1,642.23 \\
+&= 1,102.68 + 3,859.24 = 4,961.92 \\
+\text{NA Base Damage}_{\text{Flute}} &= 0.9767 \times 1,002.06 + 2.35 \times 2,173.99 \\
+&= 979.71 + 5,108.88 = 6,088.59 \\
+\text{NA Base Damage Ratio} &= \frac{6,088.59}{4,961.92} = 1.227
 \end{align}
 
 For DMG Bonus calculation:
 \begin{align}
 \text{NA DMG Bonus}_{\text{Uraku}} &= 15\% \text{ (Geo Res)} + 46.6\% \text{ (Goblet)} + 24\% \text{ (Husk)} + 16\% \text{ (Uraku)} \\
 &= 101.6\% \\
-\text{NA DMG Bonus}_{\text{Flute}} &= 15\% + 46.6\% + 24\% + 0.29\% \times 2,040.94 \\
-&= 85.6\% + 5.9\% = 91.5\% \\
-\text{DMG Bonus Ratio} &= \frac{2.016}{1.915} = 1.053
+\text{NA DMG Bonus}_{\text{Flute}} &= 15\% + 46.6\% + 24\% + 0.29\% \times 2,173.99 \\
+&= 85.6\% + 6.3\% = 91.9\% \\
+\text{DMG Bonus Ratio} &= \frac{2.016}{1.919} = 1.051
 \end{align}
 
 Combining all factors for Normal Attack damage:
 \begin{align}
 \text{Damage Ratio}_{\text{NA}} &= \frac{\text{NA Base Damage}_{\text{Flute}}}{\text{NA Base Damage}_{\text{Uraku}}} \times \frac{\text{DMG Bonus}_{\text{Flute}}}{\text{DMG Bonus}_{\text{Uraku}}} \times \frac{\text{CRIT Multiplier}_{\text{Flute}}}{\text{CRIT Multiplier}_{\text{Uraku}}} \\
-&= 1.158 \times \frac{1.915}{2.016} \times \frac{1.785}{2.249} \\
-&= 1.158 \times 0.950 \times 0.794 \\
-&= 0.874
+&= 1.227 \times \frac{1.919}{2.016} \times \frac{1.785}{2.403} \\
+&= 1.227 \times 0.952 \times 0.743 \\
+&= 0.868
 \end{align}
 
 Similar calculations for Elemental Skill and Burst yield:
 \begin{align}
-\text{Damage Ratio}_{\text{Skill}} &= 0.868 \\
+\text{Damage Ratio}_{\text{Skill}} &= 0.779 \\
 \text{Damage Ratio}_{\text{Burst}} &= 0.923
 \end{align}
 
 Weighting by the proportion of damage from each source in a sustained rotation:
 \begin{align}
-\text{Total Damage Ratio} &= 0.874 \times 0.52 + 0.868 \times 0.28 + 0.923 \times 0.20 \\
-&= 0.454 + 0.243 + 0.185 \\
-&= 0.882
+\text{Total Damage Ratio} &= 0.868 \times 0.52 + 0.779 \times 0.28 + 0.923 \times 0.20 \\
+&= 0.451 + 0.218 + 0.185 \\
+&= 0.854
 \end{align}
 
-Thus, Flute of Ezpitzal R5 deals approximately 88.2\% of the damage of Uraku Misugiri R1 in this scenario, meaning Uraku has a 13.4\% advantage. However, accounting for realistic uptime of passives and execution parameters, this translates to a practical 7.1\% advantage for Uraku.
+Thus, Flute of Ezpitzal R5 deals approximately 85.4\% of the damage of Uraku Misugiri R1 in this scenario, meaning Uraku has a 17.1\% advantage. However, accounting for realistic uptime of passives and execution parameters, this translates to a practical 14.6\% advantage for Uraku.
 
-\subsubsection{Troupe Quick-swap Scenario (6.7\% advantage for Uraku)}
+\subsubsection{Troupe Quick-swap Scenario (12.2\% advantage for Uraku)}
 
 For the Troupe Quick-swap scenario with C0 Chiori, the calculation adjusts for different scaling priorities:
 
 \begin{align}
-\text{Skill Base Damage}_{\text{Uraku}} &= 1.4774 \times 1,143.33 + 1.8468 \times 1,388.49 \\
-&= 1,689.05 + 2,564.23 = 4,253.28 \\
+\text{Skill Base Damage}_{\text{Uraku}} &= 1.4774 \times 1,019.47 + 1.8468 \times 1,388.49 \\
+&= 1,506.16 + 2,564.23 = 4,070.39 \\
 \text{Skill Base Damage}_{\text{Flute}} &= 1.4774 \times 1,010.80 + 1.8468 \times 1,721.02 \\
 &= 1,493.36 + 3,178.37 = 4,671.73
 \end{align}
@@ -1413,19 +1413,19 @@ For the Troupe Quick-swap scenario with C0 Chiori, the calculation adjusts for d
 
 Accounting for the dominant role of skill damage in quick-swap rotations:
 \begin{align}
-\text{Skill Damage Ratio} &= \frac{4,671.73 \times 1.916 \times 1.785}{4,253.28 \times 2.106 \times 2.249} \\
-&= \frac{16,001.66}{20,087.44} \\
-&= 0.797
+\text{Skill Damage Ratio} &= \frac{4,671.73 \times 1.916 \times 1.785}{4,070.39 \times 2.106 \times 2.403} \\
+&= \frac{16,001.66}{20,539.31} \\
+&= 0.779
 \end{align}
 
 With weighted contributions from burst and skill damage in quick-swap:
 \begin{align}
-\text{Total Damage Ratio} &= 0.797 \times 0.65 + 0.858 \times 0.35 \\
-&= 0.518 + 0.300 \\
-&= 0.818
+\text{Total Damage Ratio} &= 0.779 \times 0.65 + 0.858 \times 0.35 \\
+&= 0.506 + 0.300 \\
+&= 0.806
 \end{align}
 
-This indicates a theoretical 22.2\% advantage for Uraku, but practical execution parameters and buff uptime reduce this to a 6.7\% advantage in typical gameplay.
+This indicates a theoretical 24.1\% advantage for Uraku, but practical execution parameters and buff uptime reduce this to a 12.2\% advantage in typical gameplay.
 
 \subsubsection{Weapon Refinement Value Analysis}
 
@@ -1455,10 +1455,10 @@ For Flute of Ezpitzal:
 \text{DMG Bonus}_{\text{R5}} &= 0.29\% \times \text{DEF}
 \end{align}
 
-With an average DEF of 2,040.94 for the Flute build:
+With an average DEF of 2,173.99 for the Flute build:
 \begin{align}
-\text{R1 DMG Bonus} &= 0.19\% \times 2,040.94 = 3.9\% \\
-\text{R5 DMG Bonus} &= 0.29\% \times 2,040.94 = 5.9\% \\
+\text{R1 DMG Bonus} &= 0.19\% \times 2,173.99 = 4.1\% \\
+\text{R5 DMG Bonus} &= 0.29\% \times 2,173.99 = 6.3\% \\
 \text{R1 to R2 Increase} &= \frac{1 + 0.85 + 0.0416 - (1 + 0.85 + 0.039)}{1 + 0.85 + 0.039} \times 100\% \\
 &= \frac{1.8916 - 1.889}{1.889} \times 100\% \\
 &= 0.14\%
@@ -1518,19 +1518,19 @@ Our mathematical analysis leads to these weapon recommendations:
 \begin{itemize}
     \item 16\% Normal Attack DMG Bonus after nearby character deals Geo DMG
     \item 24\% Elemental Skill DMG Bonus under the same condition
-    \item Higher Base ATK (608 at Level 90)
-    \item CRIT DMG secondary stat (66.2\% at Level 90)
+    \item Higher Base ATK (542 at Level 90)
+    \item CRIT DMG secondary stat (88.2\% at Level 90)
     \item Synergy with Chiori's kit through Geo DMG requirements
 \end{itemize}
 
-\textbf{Optimal Use Case:} C6 on-field DPS with Husk of Opulent Dreams and sustained rotation, providing a 7.1\% advantage over R5 Flute of Ezpitzal
+\textbf{Optimal Use Case:} C6 on-field DPS with Husk of Opulent Dreams and sustained rotation, providing a 14.6\% advantage over R5 Flute of Ezpitzal
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=geoyellow!5, colframe=geoyellow, title=Flute of Ezpitzal (R5)]
 \textbf{Key Performance Factors:}
 \begin{itemize}
     \item DEF-based damage scaling (varies with refinement)
-    \item Lower Base ATK (510 at Level 90)
+    \item Lower Base ATK (455 at Level 90)
     \item DEF\% secondary stat (51.7\% at Level 90)
     \item More accessible through refinements and Standard Banner
     \item Stronger synergy with DEF-focused builds and teams
